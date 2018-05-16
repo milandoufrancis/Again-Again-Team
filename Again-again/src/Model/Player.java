@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Model;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -12,9 +13,8 @@ import java.util.Objects;
  *
  * @author Levi and Hidnel
  */
-
-
 public class Player implements Serializable {
+
     private String currentFile;
     private String name;
     private ArrayList<Game> games = new ArrayList<Game>();
@@ -22,7 +22,6 @@ public class Player implements Serializable {
     public Player() {
     }
 
-        
     public String getCurrentFile() {
         return currentFile;
     }
@@ -47,7 +46,6 @@ public class Player implements Serializable {
         this.games = games;
     }
 
-
     @Override
     public int hashCode() {
         int hash = 7;
@@ -55,6 +53,11 @@ public class Player implements Serializable {
         hash = 79 * hash + Objects.hashCode(this.name);
         hash = 79 * hash + Objects.hashCode(this.games);
         return hash;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" + "currentFile=" + currentFile + ", name=" + name + ", games=" + games + '}';
     }
 
     @Override
@@ -80,11 +83,5 @@ public class Player implements Serializable {
         }
         return true;
     }
-    
-    
 
-        
-    
-    
-    
 }

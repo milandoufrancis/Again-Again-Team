@@ -5,6 +5,10 @@
  */
 package again.again;
 
+import Model.Game;
+import Model.Item;
+import Model.Player;
+
 /**
  *
  * @author My Laptop
@@ -15,7 +19,17 @@ public class AgainAgain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Player player = new Player();
+        player.setCurrentFile("yes");
+        player.setName("bob");
+        
+      Game game = new Game();
+      game.setPlayer(player);
+      
+      System.out.println(game.toString());
+      System.out.println(Item.Sword.toString());
+      
+      
     }
     
 }
