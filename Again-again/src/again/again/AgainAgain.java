@@ -1,16 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package again.again;
 
 import Model.Game;
 import Model.Item;
 import Model.Player;
+import Model.Enemy;
+import Model.Actor;
+import Model.Questions;
 
 /**
- *
  * @author My Laptop
  */
 public class AgainAgain {
@@ -29,6 +26,13 @@ public class AgainAgain {
       System.out.println(game.toString());
       System.out.println(Item.Sword.toString());
       
+      Actor actor = new Actor();
+      Enemy enemy = new Enemy();
+      Questions questions = new Questions();
+      
+      System.out.println(actor.toString());
+      System.out.println(enemy.toString());
+      System.out.println(questions.toString());
       
     }
     
