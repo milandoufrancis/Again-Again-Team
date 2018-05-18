@@ -8,6 +8,9 @@ package again.again;
 import Model.Game;
 import Model.Item;
 import Model.Player;
+import Model.Map;
+import Model.TrapLocation;
+import Model.Stats;
 
 /**
  *
@@ -23,12 +26,17 @@ public class AgainAgain {
         player.setCurrentFile("yes");
         player.setName("bob");
         
+        Map map = new Map();
+        map.setDescription("You are here");
+        
+        
       Game game = new Game();
       game.setPlayer(player);
       
       System.out.println(game.toString());
       System.out.println(Item.Sword.toString());
-      
+      System.out.println(map.toString());
+      System.out.println(TrapLocation.toString());
       
     }
     
