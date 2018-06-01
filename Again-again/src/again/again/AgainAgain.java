@@ -1,19 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package again.again;
 
 import Model.Game;
 import Model.Item;
 import Model.Player;
+//<<<<<<< HEAD
 import Model.Map;
 import Model.TrapLocation;
+//=======
+import Model.Enemy;
+import Model.Actor;
+import Model.Questions;
 import Model.Stats;
+//>>>>>>> origin/master
 
 /**
- *
  * @author My Laptop
  */
 public class AgainAgain {
@@ -28,6 +28,9 @@ public class AgainAgain {
         
         Map map = new Map();
         map.setDescription("You are here");
+        TrapLocation trapType = new TrapLocation();
+        trapType.setTrapType("It's a trap!");
+        
         
         
       Game game = new Game();
@@ -36,7 +39,16 @@ public class AgainAgain {
       System.out.println(game.toString());
       System.out.println(Item.Sword.toString());
       System.out.println(map.toString());
-      System.out.println(TrapLocation.toString());
+      
+      
+      Actor actor = new Actor();
+      Enemy enemy = new Enemy();
+      Questions questions = new Questions();
+      
+      System.out.println(actor.toString());
+      System.out.println(enemy.toString());
+      System.out.println(questions.toString());
+//>>>>>>> origin/master
       
     }
     
