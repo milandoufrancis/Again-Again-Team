@@ -30,10 +30,30 @@ public class FightControl {
         }
         return Attack;
     }
-}
-    
-//    }
-//    public static void trapcontrol(){
-//        
-//    }
 
+
+    
+    
+    public static double trapcontrol(double Health, double Trap, double Level){
+        if (Health <= 0 || Health > 100){
+            return -1;
+        }
+        
+        if (Trap <= 0 || Trap > 10){
+            return -1;
+        }
+
+        if (Level <= 0 || Level > 10){
+            return -1;
+        }
+        
+        double TrapDamage = Health - (Trap * (Level / 3));
+        
+        if (TrapDamage < 0){
+            return -1;
+        }
+        return TrapDamage;
+        
+    }
+
+}
