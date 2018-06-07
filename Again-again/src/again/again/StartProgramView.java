@@ -28,11 +28,20 @@ public class StartProgramView {
     }
 
     private String[] getInputs() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         System.out.println("**** getInputs() called ***");
+         
+         String[] inputs = new String[1];
+         inputs[0] = "testInput";
+         
+         return inputs;
     }
 
     private boolean doAction(String[] inputs) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+        System.out.println("**** doAction() called ***");
+        System.out.println("\tinputs = " + inputs[0]);
+        
+        return true;
     }
     
 }
