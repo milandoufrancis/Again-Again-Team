@@ -5,6 +5,8 @@
  */
 package byui.cit260.againagain.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Levi
@@ -15,7 +17,7 @@ public class StartProgramView {
         
     }
     
-    public void DisplayStartProgramView() {
+    public void display() {
         boolean endOfView = false;
         do {
             String[] inputs = getInputs();
@@ -31,10 +33,22 @@ public class StartProgramView {
          System.out.println("**** getInputs() called ***");
          
          String[] inputs = new String[1];
-         inputs[0] = "testInput";
-         
+         System.out.println("Welcome to again and again: ");
+         boolean valid = false;
+         while (valid == false){
+             System.out.println("Please enter your name: ");
+             Scanner inFile = new Scanner(System.in);
+             inputs[0] = inFile.nextLine();
+             inputs[0] = inputs[0].trim();
+             if (inputs[0].length() < 1){
+                 System.out.println("You must enter a non-blank value");
+                 continue;
+             }
+             valid = true;
+         }
          return inputs;
-    }
+         }     
+    
 
     private boolean doAction(String[] inputs) {
     
