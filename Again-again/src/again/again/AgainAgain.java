@@ -43,13 +43,11 @@ public class AgainAgain {
       
       Actor actor = new Actor();
       Enemy enemy = new Enemy();
-      Stats locationCount = new locationCount()
       Questions questions = new Questions();
       
       System.out.println(actor.toString());
       System.out.println(enemy.toString());
       System.out.println(questions.toString());
-      System.out.println(Stats.toString());
 //>>>>>>> origin/master
       
     }
