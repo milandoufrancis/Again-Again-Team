@@ -5,11 +5,12 @@
  */
 package byui.cit260.againagain.view;
 
+import Control.GameControl;
 import java.util.Scanner;
-
+import Model.Player;
 /**
  *
- * @author Levi
+ * @author Levi and Hidnel
  */
 public class StartProgramView {
 
@@ -51,8 +52,21 @@ public class StartProgramView {
     
 
     private boolean doAction(String[] inputs) {
-    
-        System.out.println("**** doAction() called ***");
+        
+        String playerName = inputs[0];
+        Player player = GameControl.savePlayer(playerName);
+        if (player == null){
+            System.out.println("Could not create the player." + "Enter a different name");
+                    return false;
+        }
+        
+        System.out.println("================================================= "
+                + "Welcome to the game " + playerName 
+                + " We hope you have a lot of fun!"
+                + "================================================= ");
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMainMenuView();
+       
         System.out.println("\tinputs = " + inputs[0]);
         
         return true;
