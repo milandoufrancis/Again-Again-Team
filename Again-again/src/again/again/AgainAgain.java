@@ -18,6 +18,31 @@ import byui.cit260.againagain.view.StartProgramView;
  * @author My Laptop
  */
 public class AgainAgain {
+    private static Player player;
+    private static Game game;
+    
+    
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        AgainAgain.player = player;
+        
+    }
+
+    public static Game getGame() {
+        return game;
+    }
+
+    public static void setGame(Game game) {
+        AgainAgain.game = game;
+    }
+    
+    
+    
+    
 //
 //    /**
 //     * @param args the command line arguments
