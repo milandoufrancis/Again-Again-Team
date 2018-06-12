@@ -14,7 +14,12 @@ import Model.Player;
 public class GameControl {
 
     public static Player savePlayer(String playerName) {
-        System.out.println("*** savePlayer() called ***");
+       if(playerName == null || playerName.length() < 1){
+           return null;
+       }
+       
+       Player player = new Player();
+       playerName = Player();
         return new Player();
     }
 }
