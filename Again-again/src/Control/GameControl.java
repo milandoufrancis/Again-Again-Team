@@ -5,10 +5,16 @@
  */
 package Control;
 
+import Model.Player;
+
 /**
  *
- * @author My Laptop
+ * @author Levi
  */
 public class GameControl {
-    
+
+    public static Player savePlayer(String playerName) {
+        System.out.println("*** savePlayer() called ***");
+        return new Player();
+    }
 }
