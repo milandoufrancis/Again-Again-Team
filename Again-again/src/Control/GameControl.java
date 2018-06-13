@@ -6,6 +6,7 @@
 package Control;
 
 import Model.Player;
+import again.again.AgainAgain;
 
 /**
  *
@@ -16,10 +17,17 @@ public class GameControl {
     public static Player savePlayer(String playerName) {
        if(playerName == null || playerName.length() < 1){
            return null;
+           
        }
        
        Player player = new Player();
-       playerName = Player;
-        return new Player();
+       player.setName(playerName);
+       AgainAgain.setPlayer(player);
+        return player;
     }
+    
+    public static void createNewGame(Player player){
+        System.out.println("createnewgame called");
+    }
+    
 }
