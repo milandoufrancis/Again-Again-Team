@@ -19,7 +19,7 @@ public class GameControl {
        }
        
        Player player = new Player();
-       playerName = Player();
+       playerName = Player;
         return new Player();
     }
 }
