@@ -11,7 +11,7 @@ import Model.Enemy;
 import Model.Actor;
 import Model.Questions;
 import byui.cit260.againagain.view.StartProgramView;
-//import Model.Stats;
+import Model.Stats;
 //>>>>>>> origin/master
 
 /**
