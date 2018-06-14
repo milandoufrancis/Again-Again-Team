@@ -11,5 +11,6 @@ package byui.cit260.againagain.view;
  */
 class HelpMenuView {
     public static void displayHelpMenuView(){
+        
 }
 }
