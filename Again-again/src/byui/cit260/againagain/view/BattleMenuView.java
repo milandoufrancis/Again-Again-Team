@@ -65,6 +65,8 @@ public class BattleMenuView {
                 break;
             case "S":
                 System.out.println("You opened your pack to look for a...");
+                //Call a method that opens a sub menu for the items the player
+                //has collected so far in the game.
                 break;
             case "I":
                 System.out.println("You use the item you have chosen.");
