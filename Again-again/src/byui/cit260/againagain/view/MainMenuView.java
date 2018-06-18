@@ -29,57 +29,68 @@ class MainMenuView {
 
     private boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
-        
-        switch (menuItem){
-            case "N": startNewgame();
-            break;
-            case "H": getHelp();
-            break;
-            case "R": restartName();
-            break;
-            case "Q": 
+
+        switch (menuItem) {
+            case "N":
+                startNewgame();
+                break;
+            case "H":
+                getHelp();
+                break;
+            case "R":
+                restartName();
+                break;
+            case "T":
+                TrapMenuView trap = new TrapMenuView();
+                trap.displayTrapMenuView();
+                break;
+                
+            case "Z":
+                SubHelpMenu menu = new SubHelpMenu();
+                menu.displaySubHelpMenuView();
+                break;
+                
+            case "Q":
                 return true;
-            
-            default: System.out.println("Invalid menu item.");
+
+            default:
+                System.out.println("Invalid menu item.");
         }
-        
+
         return false;
     }
 
     private String[] getInputs() {
         String[] inputs = new String[1];
         boolean valid = false;
-        
-        while (!valid){
-        System.out.println("N - Start New Game\n" 
-        + "L - Load game\n" + "H - Help menu\n" + "Q - Quit game\n");
-        Scanner inFile = new Scanner(System.in);
-        inputs[0] = inFile.nextLine();
-        inputs[0] = inputs[0].trim().toUpperCase();
 
-        
-        if (inputs[0].length()< 1){
-            System.out.println("You must enter a value.");
-            continue;
-                      }
-        valid = true;
-        
-        
-        
-    }
+        while (!valid) {
+            System.out.println("N - Start New Game\n"
+                    + "L - Load game\n" + "H - Help menu\n" + "Q - Quit game\n");
+            Scanner inFile = new Scanner(System.in);
+            inputs[0] = inFile.nextLine();
+            inputs[0] = inputs[0].trim().toUpperCase();
+
+            if (inputs[0].length() < 1) {
+                System.out.println("You must enter a value.");
+                continue;
+            }
+            valid = true;
+
+        }
         return inputs;
     }
 
     private void startNewgame() {
-       GameControl.createNewGame(AgainAgain.getPlayer());
-       GameMenuView menuView = new GameMenuView();
-       menuView.display();     
+        GameControl.createNewGame(AgainAgain.getPlayer());
+        GameMenuView menuView = new GameMenuView();
+        menuView.display();
     }
 
     private void getHelp() {
-       HelpMenuView menuView = new HelpMenuView();
-       menuView.displayHelpMenuView();
-       
+        HelpMenuView menuView = new HelpMenuView();
+        menuView.displayHelpMenuView();
+
     }
     
     private void getBattle() {

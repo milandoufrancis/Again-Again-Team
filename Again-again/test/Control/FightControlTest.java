@@ -49,7 +49,7 @@ public class FightControlTest {
     }
 
     /**
-     * Test of trapcontrol method, of class FightControl.
+     * Test of trapControl method, of class FightControl.
      */
     @Test
     public void testTrapcontrol() {
@@ -58,7 +58,7 @@ public class FightControlTest {
         double Trap = 6.0;
         double Level = 10.0;
         double expResult = 60.0;
-        double result = FightControl.trapcontrol(Health, Trap, Level);
+        double result = FightControl.trapControl(Health, Trap, Level);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("test 2");
@@ -66,7 +66,7 @@ public class FightControlTest {
          Trap = 8.0;
          Level = 4.0;
          expResult = -1;
-         result = FightControl.trapcontrol(Health, Trap, Level);
+         result = FightControl.trapControl(Health, Trap, Level);
         assertEquals(expResult, result, 0.0);
         
         
@@ -75,7 +75,7 @@ public class FightControlTest {
          Trap = 0.0;
          Level = 3.0;
          expResult = -1;
-         result = FightControl.trapcontrol(Health, Trap, Level);
+         result = FightControl.trapControl(Health, Trap, Level);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("test 4");
@@ -83,7 +83,7 @@ public class FightControlTest {
          Trap = 4.0;
          Level = -1.0;
          expResult = -1;
-         result = FightControl.trapcontrol(Health, Trap, Level);
+         result = FightControl.trapControl(Health, Trap, Level);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("test 5");
@@ -91,7 +91,7 @@ public class FightControlTest {
          Trap = 1.0;
          Level = 1.0;
          expResult = 0.66666667;
-         result = FightControl.trapcontrol(Health, Trap, Level);
+         result = FightControl.trapControl(Health, Trap, Level);
         assertEquals(expResult, result, 0.1);
         
         System.out.println("test 6");
@@ -99,7 +99,7 @@ public class FightControlTest {
          Trap = 10.0;
          Level = 10.0;
          expResult = 66.6666667;
-         result = FightControl.trapcontrol(Health, Trap, Level);
+         result = FightControl.trapControl(Health, Trap, Level);
         assertEquals(expResult, result, 0.1);
     }
 
