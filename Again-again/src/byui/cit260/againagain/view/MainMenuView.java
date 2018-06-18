@@ -78,8 +78,13 @@ class MainMenuView {
 
     private void getHelp() {
        HelpMenuView menuView = new HelpMenuView();
-       HelpMenuView.displayHelpMenuView();
+       menuView.displayHelpMenuView();
        
+    }
+    
+    private void getBattle() {
+        BattleMenuView menuView = new BattleMenuView();
+        menuView.displayBattleMenuView();
     }
 
     private void restartName() {
