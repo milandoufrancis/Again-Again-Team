@@ -9,10 +9,18 @@ package byui.cit260.againagain.view;
  *
  * @author My Laptop
  */
-class GameMenuView {
+class GameMenuView extends View{
 
-    void display() {
+    @Override
+    public String[] getInputs() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public boolean doAction(String[] inputs) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
     
 }
