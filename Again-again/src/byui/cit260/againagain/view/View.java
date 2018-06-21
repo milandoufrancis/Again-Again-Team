@@ -23,7 +23,7 @@ public abstract class View implements ViewInterface {
             if (inputs[0].length() < 1 || inputs[0].toUpperCase().equals("Q")) {
                 return;
             }
-            endView = doAction(inputs);
+            endView = this.doAction(inputs);
         } while (endView != true);
 
     }

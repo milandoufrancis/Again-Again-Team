@@ -50,12 +50,14 @@ class MainMenuView extends View {
 
     public String[] getInputs() {
         String[] inputs = new String[1];
-        boolean valid = false;
 
-        inputs[0] = getInput("N - Start New Game\n"
+        System.out.println("N - Start New Game\n"
                 + "L - Load game\n"
                 + "H - Help menu\n"
+                + "T - Trap menu\n"
                 + "Q - Quit game\n");
+        
+        inputs[0] = getInput("Enter the menu option").trim().toUpperCase();
 
         return inputs;
     }
