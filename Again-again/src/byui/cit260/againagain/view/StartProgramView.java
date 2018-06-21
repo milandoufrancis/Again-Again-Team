@@ -65,7 +65,7 @@ public class StartProgramView {
                 + " We hope you have a lot of fun!"
                 + "================================================= ");
         MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
        
         System.out.println("\tinputs = " + inputs[0]);
         

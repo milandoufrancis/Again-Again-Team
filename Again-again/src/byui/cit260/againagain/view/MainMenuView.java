@@ -13,21 +13,9 @@ import java.util.Scanner;
  *
  * @author Levi
  */
-class MainMenuView {
+class MainMenuView extends View {
 
-    void displayMainMenuView() {
-        boolean endView = false;
-        do {
-            String[] inputs = getInputs();
-            if (inputs[0].length() < 1 || inputs[0].toUpperCase().equals("Q")) {
-                return;
-            }
-            endView = doAction(inputs);
-        } while (endView != true);
-
-    }
-
-    private boolean doAction(String[] inputs) {
+    public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
 
         switch (menuItem) {
@@ -42,14 +30,14 @@ class MainMenuView {
                 break;
             case "T":
                 TrapMenuView trap = new TrapMenuView();
-                trap.displayTrapMenuView();
+                trap.display();
                 break;
-                
+
             case "Z":
                 SubHelpMenu menu = new SubHelpMenu();
-                menu.displaySubHelpMenuView();
+                menu.display();
                 break;
-                
+
             case "Q":
                 return true;
 
@@ -60,24 +48,15 @@ class MainMenuView {
         return false;
     }
 
-    private String[] getInputs() {
+    public String[] getInputs() {
         String[] inputs = new String[1];
         boolean valid = false;
 
-        while (!valid) {
-            System.out.println("N - Start New Game\n"
-                    + "L - Load game\n" + "H - Help menu\n" + "Q - Quit game\n");
-            Scanner inFile = new Scanner(System.in);
-            inputs[0] = inFile.nextLine();
-            inputs[0] = inputs[0].trim().toUpperCase();
+        inputs[0] = getInput("N - Start New Game\n"
+                + "L - Load game\n"
+                + "H - Help menu\n"
+                + "Q - Quit game\n");
 
-            if (inputs[0].length() < 1) {
-                System.out.println("You must enter a value.");
-                continue;
-            }
-            valid = true;
-
-        }
         return inputs;
     }
 
@@ -89,13 +68,13 @@ class MainMenuView {
 
     private void getHelp() {
         HelpMenuView menuView = new HelpMenuView();
-        menuView.displayHelpMenuView();
+        menuView.display();
 
     }
-    
+
     private void getBattle() {
         BattleMenuView menuView = new BattleMenuView();
-        menuView.displayBattleMenuView();
+        menuView.display();
     }
 
     private void restartName() {

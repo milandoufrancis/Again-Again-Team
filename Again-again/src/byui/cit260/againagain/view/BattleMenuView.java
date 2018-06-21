@@ -11,44 +11,22 @@ import java.util.Scanner;
  *
  * @author Levi
  */
-public class BattleMenuView {
-    void displayBattleMenuView() {
-        boolean endView = false;
-        do {
-            String[] inputs = getInputs();
-            if (inputs[0].length() < 1 || inputs[0].toUpperCase().equals("Q")) {
-                return;
-            }
-            endView = doAction(inputs);
-        } while (endView != true);
+public class BattleMenuView extends View {
+    
 
-    }
-
-    private String[] getInputs() {
+    public String[] getInputs() {
         String[] inputs = new String[1];
         boolean valid = false;
         
-        while (!valid) {
-            System.out.println("A – Attack\n" +
+        inputs[0] = getInput("A – Attack\n" +
                     "D – Defend\n" + 
                     "R - Run Away\n" +
                     "S - Item Storage\n" +
                     "I - Use Item\n");
-            Scanner inFile = new Scanner(System.in);
-            inputs[0] = inFile.nextLine();
-            inputs[0] = inputs[0].trim().toUpperCase();
-            
-            if (inputs[0].length() < 1) {
-                System.out.println("Are you in that much a rush to die?\n" + 
-                        "Do something!");
-                continue;
-            }
-            valid = true;
-        }
         return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+    public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         
         switch(menuItem) {

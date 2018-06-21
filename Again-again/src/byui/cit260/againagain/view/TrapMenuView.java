@@ -12,43 +12,26 @@ import java.util.Scanner;
  *
  * @author My Laptop
  */
-public class TrapMenuView {
-    void displayTrapMenuView() {
-        boolean endView = false;
-        do {
-            String[] inputs = getInputs();
-            if (inputs[0].length() < 1 || inputs[0].toUpperCase().equals("Q")) {
-                return;
-            }
-            endView = doAction(inputs);
-        } while (endView != true);
+public class TrapMenuView extends View {
     
-}
 
-    private String[] getInputs() {
+    public String[] getInputs() {
         String[] inputs = new String[1];
         boolean valid = false;
 
-        while (!valid) {
-            System.out.println("4 - Check the damage caused by the trap.\n"
+        inputs[0] = getInput("4 - Check the damage caused by the trap.\n"
                     + "V - Press V to escape to next room.\n" 
                     + "Q - Quit");
             Scanner inFile = new Scanner(System.in);
             inputs[0] = inFile.nextLine();
             inputs[0] = inputs[0].trim().toUpperCase();
 
-            if (inputs[0].length() < 1) {
-                System.out.println("You must enter a value.");
-                continue;
-            }
-            valid = true;
-
-        }
+           
         return inputs;
         
     }
 
-    private boolean doAction(String[] inputs) {
+    public boolean doAction(String[] inputs) {
         double health = 80.0;
         health = FightControl.trapControl(80.0, 6.0, 10.0);
         
