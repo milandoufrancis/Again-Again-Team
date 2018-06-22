@@ -11,9 +11,18 @@ public class Actor {
     private int actorHealth;
     private int actorDamage;
     private int actorScore;
+    private int defence;
     
     public Actor() {
     
+    }
+
+    public int getDefence() {
+        return defence;
+    }
+
+    public void setDefence(int defence) {
+        this.defence = defence;
     }
 
     public String getDescription() {
@@ -52,18 +61,14 @@ public class Actor {
     }
 
     @Override
-    public String toString() {
-        return "Actor{" + "description=" + description + ", coordinates=" + coordinates + ", actorHealth=" + actorHealth + ", actorDamage=" + actorDamage + ", actorScore=" + actorScore + '}';
-    }
-
-    @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 89 * hash + Objects.hashCode(this.description);
-        hash = 89 * hash + Arrays.deepHashCode(this.coordinates);
-        hash = 89 * hash + this.actorHealth;
-        hash = 89 * hash + this.actorDamage;
-        hash = 89 * hash + this.actorScore;
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.description);
+        hash = 59 * hash + Arrays.deepHashCode(this.coordinates);
+        hash = 59 * hash + this.actorHealth;
+        hash = 59 * hash + this.actorDamage;
+        hash = 59 * hash + this.actorScore;
+        hash = 59 * hash + this.defence;
         return hash;
     }
 
@@ -88,6 +93,9 @@ public class Actor {
         if (this.actorScore != other.actorScore) {
             return false;
         }
+        if (this.defence != other.defence) {
+            return false;
+        }
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
@@ -96,5 +104,11 @@ public class Actor {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Actor{" + "description=" + description + ", coordinates=" + coordinates + ", actorHealth=" + actorHealth + ", actorDamage=" + actorDamage + ", actorScore=" + actorScore + ", defence=" + defence + '}';
+    }
+
     
 }

@@ -10,7 +10,7 @@ package Control;
  * @author My Laptop
  */
 public class FightControl {
-    public static double fightControl(double Health, double Defense, double Weapon){
+    public static int fightControl(int Health, int Defense, int Weapon){
         if (Health <= 0 || Health > 100){
             return -1;
         }
@@ -23,7 +23,7 @@ public class FightControl {
             return -1;
         }
         
-        double Attack = Health - (Weapon / Defense);
+        int Attack = Health - (Weapon / Defense);
         
         if (Attack < 0){
             return -1;

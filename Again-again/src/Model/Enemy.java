@@ -7,8 +7,17 @@ import java.util.Objects;
 
 public class Enemy {
     private int enemyHP;
+
+    public int getDefence() {
+        return defence;
+    }
+
+    public void setDefence(int defence) {
+        this.defence = defence;
+    }
     private int enemyDamage;
     private int enemyScore;
+    private int defence;
     private String description; 
     private int[][] enemyLocation;
 
@@ -52,17 +61,18 @@ public class Enemy {
 
     @Override
     public String toString() {
-        return "Enemy{" + "enemyHP=" + enemyHP + ", enemyDamage=" + enemyDamage + ", enemyScore=" + enemyScore + ", description=" + description + ", enemyLocation=" + enemyLocation + '}';
+        return "Enemy{" + "enemyHP=" + enemyHP + ", enemyDamage=" + enemyDamage + ", enemyScore=" + enemyScore + ", defence=" + defence + ", description=" + description + ", enemyLocation=" + enemyLocation + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 73 * hash + this.enemyHP;
-        hash = 73 * hash + this.enemyDamage;
-        hash = 73 * hash + this.enemyScore;
-        hash = 73 * hash + Objects.hashCode(this.description);
-        hash = 73 * hash + Arrays.deepHashCode(this.enemyLocation);
+        hash = 31 * hash + this.enemyHP;
+        hash = 31 * hash + this.enemyDamage;
+        hash = 31 * hash + this.enemyScore;
+        hash = 31 * hash + this.defence;
+        hash = 31 * hash + Objects.hashCode(this.description);
+        hash = 31 * hash + Arrays.deepHashCode(this.enemyLocation);
         return hash;
     }
 
@@ -87,6 +97,9 @@ public class Enemy {
         if (this.enemyScore != other.enemyScore) {
             return false;
         }
+        if (this.defence != other.defence) {
+            return false;
+        }
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
@@ -95,6 +108,8 @@ public class Enemy {
         }
         return true;
     }
+
+    
     
     
     
