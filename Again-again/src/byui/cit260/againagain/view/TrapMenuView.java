@@ -20,7 +20,7 @@ public class TrapMenuView extends View {
         boolean valid = false;
 
         inputs[0] = getInput("4 - Check the damage caused by the trap.\n"
-                    + "V - Press V to escape to next room.\n" 
+                    + "V - Escape to next room.\n" 
                     + "Q - Quit");
             Scanner inFile = new Scanner(System.in);
             inputs[0] = inFile.nextLine();
@@ -39,7 +39,7 @@ public class TrapMenuView extends View {
             System.out.println("You're dead!");
             return true;
         }else if(health > 0 && health < 5.0){
-            System.out.println("you almost died!");
+            System.out.println("You're almost died!");
         }else{
             System.out.println("You're still alive");
         }
