@@ -32,6 +32,10 @@ class MainMenuView extends View {
                 TrapMenuView trap = new TrapMenuView();
                 trap.display();
                 break;
+            case "F": 
+                AttackHitView view = new AttackHitView();
+                view.display();
+                break;
 
             case "Z":
                 SubHelpMenu menu = new SubHelpMenu();
