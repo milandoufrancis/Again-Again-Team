@@ -17,14 +17,13 @@ public class TrapMenuView extends View {
 
     public String[] getInputs() {
         String[] inputs = new String[1];
-        boolean valid = false;
+        
 
-        inputs[0] = getInput("4 - Check the damage caused by the trap.\n"
-                    + "V - Escape to next room.\n" 
+        System.out.println("4 - Check the damage caused by the trap.\n"
+                    + "V - Press V to escape to next room.\n" 
                     + "Q - Quit");
-            Scanner inFile = new Scanner(System.in);
-            inputs[0] = inFile.nextLine();
-            inputs[0] = inputs[0].trim().toUpperCase();
+        inputs[0] = getInput("Enter the menu option").trim().toUpperCase();
+
 
            
         return inputs;
@@ -43,21 +42,9 @@ public class TrapMenuView extends View {
         }else{
             System.out.println("You're still alive");
         }
-        String menuItem = inputs[0];
-        switch (menuItem) {
-            case "4":
-                System.out.println("Check the damage caused by the trap.\n");
-                break;
-           
-            case "V":
-            case "Q":
-                System.out.println("Quit");
-                return true;
-
-            default:
-                System.out.println("Invalid menu item.");
+        System.out.println("Your health is " + health);
         
-    }
-        return false;
+   
+        return true;
 }
 }
