@@ -54,12 +54,9 @@ public class Player implements Serializable {
         hash = 79 * hash + Objects.hashCode(this.name);
         return hash;
     }
-
-    @Override
-    public String toString() {
-        return "Player{" + "currentFile=" + currentFile + ", name=" + name + ", games="};
-    }
-
+}
+  
+/**
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -81,4 +78,4 @@ public class Player implements Serializable {
         return true;
     }
 
-}
+}**/
