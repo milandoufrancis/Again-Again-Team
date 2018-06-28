@@ -51,7 +51,43 @@ public class GameControl {
         werewolf.setDefence(8);
         werewolf.setActorScore(25);
         actors[1] = werewolf;
+        
+        //Actor object for the monster, 
+        Actor skeleton = new Actor();
+        skeleton.setDescription("Spooky, scary skeleton. Sends shivers down my spine...");
+        skeleton.setCoordinates(new Point(1,3));
+        skeleton.setActorHealth(10);
+        skeleton.setActorDamage(3);
+        skeleton.setActorScore(5);
+        actors[2] = skeleton;
+        
+        //Actor object for a spider
+        Actor spider = new Actor();
+        spider.setDescription("An eight legged freak of nature. Why do these exist?");
+        spider.setCoordinates(new Point(1,5));
+        spider.setActorHealth(6);
+        spider.setActorDamage(2);
+        spider.setActorScore(2);
+        actors[3] = spider;
+        
+        //Actor Object for a zombie
+        Actor zombie = new Actor();
+        zombie.setDescription("Use your head. This guy just wants to eat it.");
+        zombie.setCoordinates(new Point (2,7));
+        zombie.setActorHealth(8);
+        zombie.setActorDamage(10);
+        zombie.setActorScore(8);
+        actors[4] = zombie;
 
+        //Actor Object for vampire
+        Actor vampire = new Actor();
+        vampire.setDescription("Kind of like a zombie, except this one likes to drink blood.");
+        vampire.setCoordinates(new Point (-3,4));
+        vampire.setActorHealth(25);
+        vampire.setActorDamage(15);
+        vampire.setActorScore(50);
+        actors[5] = vampire;
+        
         return actors;
     }
 
@@ -80,7 +116,7 @@ public class GameControl {
         game.setItems(items);
         
         // Create all other list (e.g., questions, weapons, spells) and save in the game
-
+        
        
 //map = MapControl.createMap(game, noOfRows, noOfColumns)
 //        if (map == null) {
@@ -90,10 +126,10 @@ public class GameControl {
         return 1;
     }
 
-    public static Item[] createItems() {
+      public static Item[] createItems() {
        System.out.println("createItems has been called");
        Item[] itemList = new Item[10];
+       
        return itemList;
-    }
-    
+    }  
 }
