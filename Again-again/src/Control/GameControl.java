@@ -71,14 +71,18 @@ public class GameControl {
         Actor[] actorList = GameControl.createActors();
         //Assign an actor to the player
         player.setActor(actorList[0]);
+        // call setter to save list of players in the game
+        game.setActors(actorList);
         
 // Create the lists of used in the game
         Item[] items = GameControl.createItems();
         //call setter to save items list in the game object
+        game.setItems(items);
+        
         // Create all other list (e.g., questions, weapons, spells) and save in the game
 
        
-//map = createMap(game, noOfRows, noOfColumns)
+//map = MapControl.createMap(game, noOfRows, noOfColumns)
 //        if (map == null) {
 //            return -2;
 //        }
