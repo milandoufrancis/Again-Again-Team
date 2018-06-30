@@ -16,7 +16,7 @@ public class Question {
         return questionType;
     }
 
-    public void setQuestionTpye(String questionTpye) {
+    public void setQuestionType(String questionTpye) {
         this.questionType = questionType;
     }
 

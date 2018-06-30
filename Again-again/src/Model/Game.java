@@ -17,6 +17,7 @@ public class Game implements Serializable{
     private Player player;
     private Actor[] actors;
     private Question[] questions;
+    private Map map;
 
     public Player getPlayer() {
         return player;
@@ -43,6 +44,14 @@ public class Game implements Serializable{
 
     public void setQuestions(Question[] questions) {
         this.questions = questions;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
 
     

@@ -22,6 +22,15 @@ public class Location implements Serializable{
 
     public Location() {
     }
+
+    public Location(int row, int column, boolean visited, String displaySymbol, int locationValue, String description) {
+        this.row = row;
+        this.column = column;
+        this.visited = visited;
+        this.displaySymbol = displaySymbol;
+        this.locationValue = locationValue;
+        this.description = description;
+    }
     
     
 

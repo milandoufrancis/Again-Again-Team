@@ -8,6 +8,7 @@ package Control;
 import Model.Actor;
 import Model.Game;
 import Model.Item;
+import Model.Location;
 import Model.Player;
 import Model.Question;
 import again.again.AgainAgain;
@@ -140,6 +141,7 @@ public class GameControl {
        Question[] questionList = new Question[10];
        
        //Create the next object to be added to the array
+       Question bossRoom  = new Question();
        //Call setter methods to assign values to each attribute in the object
        //Assign the object to the next position in the array
        return questionList;
