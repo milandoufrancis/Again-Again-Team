@@ -68,10 +68,24 @@ return null;
 }
 //call setter to save a locations array in the map object
 map.setLocations(locations);
-// assign actors and items to locations
 
-// Assign all other types objects to locations (e.g., questions, spells) ...
 return map;
 }
-    
+// assign actors and items to locations
+private static int assignActorsToLocations( Location[][] locations){
+// Check for invalid input
+if (locations == null){
+    return -1;
+}
+
+// Assign the actor to starting its location
+    location = locations[0][0];
+    location.setActor(Actor.Nephi);
+    actorCoordinates = Actor.Nephi.getCoordinates();
+    actorPosition.x = 2;
+    actorPosition.y = 1;
+
+
+return 1;}
+// Assign all other types objects to locations (e.g., questions, spells) ...  
 }
