@@ -26,8 +26,8 @@ public class TrapMenuView extends View {
     }
 
     public boolean doAction(String[] inputs) {
-        double health = 80.0;
-        health = FightControl.trapControl(80.0, 6.0, 10.0);
+        int health = 80;
+        health = FightControl.trapControl(80, 6, 10);
 
         if (health <= 0) {
             System.out.println("You're dead!");

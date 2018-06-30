@@ -13,11 +13,12 @@ package Model;
 import java.io.Serializable;
 
  public enum Item implements Serializable{
-    Sword("Sword", "This thing is sure sharp, try whacking people with it,", 1, "weapon"),
+    Sword("Sword", "This thing is sure sharp. Try whacking something with it,", 1, "weapon"),
     Shield("Shield", "this thing is dull, make sure to let sharp stuff hit it", 2, "defence"),
     Herbs("Herbs", "Hey mann this is for you to feel better after you get hurt", 3, "healing"),
-    Fruits("Fruits", "This is for you to get better", 4, "healing");
-    
+    Fruits("Fruits", "This is for you to get better", 4, "healing"),
+    Water("Holy water", "This is the kind of water that scares vampires to their core", 5, "weapon"),
+    Silver_Arrow("Arrow", "An arrow poisoned with wolfsbane; perfect against werewolves!", 6, "weapon");
     private String itemName;
     private String itemDescription;
     private int value;

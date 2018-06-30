@@ -9,7 +9,7 @@ import Model.Map;
 //=======
 import Model.Enemy;
 import Model.Actor;
-import Model.Questions;
+import Model.Question;
 import byui.cit260.againagain.view.StartProgramView;
 import Model.Stats;
 //>>>>>>> origin/master
@@ -73,7 +73,7 @@ public class AgainAgain {
 //      
 //      Actor actor = new Actor();
 //      Enemy enemy = new Enemy();
-//      Questions questions = new Questions();
+//      Question questions = new Question();
 //      
 //      System.out.println(actor.toString());
 //      System.out.println(enemy.toString());

@@ -90,6 +90,7 @@ public class FightControlTest {
          Health = 1;
          Trap = 1;
          Level = 1;
+         expResult = 0;
          result = FightControl.trapControl(Health, Trap, Level);
         assertEquals(expResult, result, 0.0);
         
