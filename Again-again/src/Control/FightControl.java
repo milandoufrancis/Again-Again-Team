@@ -34,7 +34,7 @@ public class FightControl {
 
     
     
-    public static double trapControl(double Health, double Trap, double Level){
+    public static int trapControl(int Health, int Trap, int Level){
         if (Health <= 0 || Health > 100){
             return -1;
         }
@@ -47,7 +47,7 @@ public class FightControl {
             return -1;
         }
         
-        double TrapDamage = Health - (Trap * (Level / 3));
+        int TrapDamage = Health - (Trap * (Level / 3));
         
         if (TrapDamage < 0){
             return -1;

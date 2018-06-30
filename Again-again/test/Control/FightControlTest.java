@@ -27,7 +27,7 @@ public class FightControlTest {
         int Defense = 5;
         int Weapon = 20;
         int expResult = 76;
-        double result = FightControl.fightControl(Health, Defense, Weapon);
+        int result = FightControl.fightControl(Health, Defense, Weapon);
         assertEquals(expResult, result, 0.0);
 
         System.out.println("Test 2");
@@ -57,8 +57,8 @@ public class FightControlTest {
         int Health = 80;
         int Trap = 6;
         int Level = 10;
-        int expResult = 60;
-        double result = FightControl.trapControl(Health, Trap, Level);
+        int expResult = 62;
+        int result = FightControl.trapControl(Health, Trap, Level);
         assertEquals(expResult, result, 0.0);
         
         System.out.println("test 2");
@@ -90,9 +90,8 @@ public class FightControlTest {
          Health = 1;
          Trap = 1;
          Level = 1;
-         expResult = 0;
          result = FightControl.trapControl(Health, Trap, Level);
-        assertEquals(expResult, result, 0.1);
+        assertEquals(expResult, result, 0.0);
         
         System.out.println("test 6");
          Health = 100;
@@ -100,7 +99,6 @@ public class FightControlTest {
          Level = 10;
          expResult = 66;
          result = FightControl.trapControl(Health, Trap, Level);
-        assertEquals(expResult, result, 0.1);
+        assertEquals(expResult, result, 0.0);
     }
-
 }

@@ -67,7 +67,7 @@ game.setPlayer(player);
 //call setter to save the game in the main class of program
 AgainAgain.setGame(game);
 //call setter to assign an actor to the player
-Player.setActor(actor);
+Actor.createActors(actors[0]);
 // Create the lists of used in the game
 Item items = createItems();
 call setter to save items list in the game object

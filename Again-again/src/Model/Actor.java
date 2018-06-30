@@ -3,17 +3,18 @@ package Model;
 
 import java.util.Arrays;
 import java.util.Objects;
-
+import java.awt.Point;
 
 public class Actor {
     private String description;
-    private int[][] coordinates; 
+    private Point coordinates; 
     private int actorHealth;
     private int actorDamage;
     private int actorScore;
     private int defence;
     
     public Actor() {
+        
     
     }
 
@@ -32,10 +33,10 @@ public class Actor {
         this.description = description;
     }
 
-    public int[][] getCoordinates() {
+    public Point getCoordinates() {
         return coordinates;
     }
-    public void setCoordinates(int[][] coordinates) {
+    public void setCoordinates(Point coordinates) {
         this.coordinates = coordinates;
     }
 
@@ -64,7 +65,7 @@ public class Actor {
     public int hashCode() {
         int hash = 7;
         hash = 59 * hash + Objects.hashCode(this.description);
-        hash = 59 * hash + Arrays.deepHashCode(this.coordinates);
+        hash = 59 * hash + Objects.hashCode(this.coordinates);
         hash = 59 * hash + this.actorHealth;
         hash = 59 * hash + this.actorDamage;
         hash = 59 * hash + this.actorScore;
@@ -99,7 +100,7 @@ public class Actor {
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Arrays.deepEquals(this.coordinates, other.coordinates)) {
+        if (!Objects.equals(this.coordinates, other.coordinates)) {
             return false;
         }
         return true;
