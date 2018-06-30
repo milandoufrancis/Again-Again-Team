@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Game implements Serializable{
     private Player player;
     private Actor[] actors;
-    private Item[] items;
+    private Question[] questions;
 
     public Player getPlayer() {
         return player;
@@ -37,13 +37,15 @@ public class Game implements Serializable{
         this.actors = actors;
     }
 
-    public Item[] getItems() {
-        return items;
+    public Question[] getQuestions() {
+        return questions;
     }
 
-    public void setItems(Item[] items) {
-        this.items = items;
+    public void setQuestions(Question[] questions) {
+        this.questions = questions;
     }
+
+    
 
     
 

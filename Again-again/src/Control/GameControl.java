@@ -9,6 +9,7 @@ import Model.Actor;
 import Model.Game;
 import Model.Item;
 import Model.Player;
+import Model.Question;
 import again.again.AgainAgain;
 import java.awt.Point;
 
@@ -31,7 +32,7 @@ public class GameControl {
     }
 
     public static Actor[] createActors() {
-        Actor[] actors = new Actor[5];
+        Actor[] actors = new Actor[6];
         //Actor for the player's character
         Actor mainplayer = new Actor();
         mainplayer.setDescription("This is you, the main character of this game!");
@@ -111,9 +112,9 @@ public class GameControl {
         game.setActors(actorList);
         
 // Create the lists of used in the game
-        Item[] items = GameControl.createItems();
+        Question[] questions = GameControl.createQuestions();
         //call setter to save items list in the game object
-        game.setItems(items);
+        game.setQuestions(questions);
         
         // Create all other list (e.g., questions, weapons, spells) and save in the game
         
@@ -132,4 +133,16 @@ public class GameControl {
        
        return itemList;
     }  
+
+    private static Question[] createQuestions() {
+        System.out.println("createQuestions has been called");
+       //Create an array large enough to hold all of the elements in the list
+       Question[] questionList = new Question[10];
+       
+       //Create the next object to be added to the array
+       //Call setter methods to assign values to each attribute in the object
+       //Assign the object to the next position in the array
+       return questionList;
+    }  
+      
 }
