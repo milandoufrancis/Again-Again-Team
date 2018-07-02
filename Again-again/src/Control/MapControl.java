@@ -5,9 +5,12 @@
  */
 package Control;
 
+import Model.Actor;
+import Model.ActorType;
 import Model.Game;
 import Model.Location;
 import Model.Map;
+import again.again.AgainAgain;
 
 /**
  *
@@ -72,18 +75,19 @@ map.setLocations(locations);
 return map;
 }
 // assign actors and items to locations
-private static int assignActorsToLocations( Location[][] locations){
+private static int assignActorsToLocations(Location[][] locations){
 // Check for invalid input
 if (locations == null){
     return -1;
 }
 
 // Assign the actor to starting its location
-    location = locations[0][0];
-    location.setActor(Actor.Nephi);
-    actorCoordinates = Actor.Nephi.getCoordinates();
-    actorPosition.x = 2;
-    actorPosition.y = 1;
+    //Actor actor = AgainAgain.getGame().getPlayer().getActor();
+    //locations[0][0].setActor(actor);
+    Actor actors[] = AgainAgain.getGame().getActors();
+    
+    locations[3][1].setActor(actors[ActorType.skeleton.ordinal()]);
+    
 
 
 return 1;}

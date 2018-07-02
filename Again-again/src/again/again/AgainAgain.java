@@ -20,6 +20,7 @@ import Model.Stats;
 public class AgainAgain {
     private static Player player;
     private static Game game;
+    private static Actor actor;
     
     
 
@@ -38,6 +39,14 @@ public class AgainAgain {
 
     public static void setGame(Game game) {
         AgainAgain.game = game;
+    }
+
+    public static Actor getActor() {
+        return actor;
+    }
+
+    public static void setActor(Actor actor) {
+        AgainAgain.actor = actor;
     }
     
     

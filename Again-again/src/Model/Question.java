@@ -24,10 +24,6 @@ public class Question {
         return questionType;
     }
 
-    public void setQuestionType(String questionType) {
-        this.questionType = questionType;
-    }
-
     public String getQuestionText() {
         return questionText;
     }
