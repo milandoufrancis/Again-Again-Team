@@ -23,7 +23,7 @@ public class FightControlTest {
     @Test
     public void testFightControl() {
         System.out.println("Test 1");
-        float Health = 80;
+        int Health = 80;
         int Defense = 5;
         int Weapon = 20;
         int expResult = 76;
