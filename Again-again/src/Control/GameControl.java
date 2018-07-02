@@ -6,8 +6,10 @@
 package Control;
 
 import Model.Actor;
+import Model.ActorType;
 import Model.Game;
 import Model.Item;
+import Model.Location;
 import Model.Player;
 import Model.Question;
 import again.again.AgainAgain;
@@ -32,7 +34,7 @@ public class GameControl {
     }
 
     public static Actor[] createActors() {
-        Actor[] actors = new Actor[6];
+        Actor[] actors = new Actor[ActorType.values().length];
         //Actor for the player's character
         Actor mainplayer = new Actor();
         mainplayer.setDescription("This is you, the main character of this game!");
@@ -41,7 +43,7 @@ public class GameControl {
         mainplayer.setActorDamage(3);
         mainplayer.setDefence(5);
         mainplayer.setActorScore(1);
-        actors[0] = mainplayer;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
 
         //Actor object for the monster, Werewolf
         Actor werewolf = new Actor();
@@ -140,6 +142,7 @@ public class GameControl {
        Question[] questionList = new Question[10];
        
        //Create the next object to be added to the array
+       Question bossRoom  = new Question();
        //Call setter methods to assign values to each attribute in the object
        //Assign the object to the next position in the array
        return questionList;

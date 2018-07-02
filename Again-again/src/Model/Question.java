@@ -16,16 +16,12 @@ public class Question {
         return questionType;
     }
 
-    public void setQuestionTpye(String questionTpye) {
+    public void setQuestionType(String questionTpye) {
         this.questionType = questionType;
     }
 
     public String getQuestionType() {
         return questionType;
-    }
-
-    public void setQuestionType(String questionType) {
-        this.questionType = questionType;
     }
 
     public String getQuestionText() {

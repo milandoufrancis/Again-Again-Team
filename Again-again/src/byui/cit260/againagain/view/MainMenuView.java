@@ -37,11 +37,6 @@ class MainMenuView extends View {
                 view.display();
                 break;
 
-            case "Z":
-                SubHelpMenu menu = new SubHelpMenu();
-                menu.display();
-                break;
-
             case "Q":
                 return true;
 

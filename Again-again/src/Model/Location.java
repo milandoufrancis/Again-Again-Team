@@ -19,8 +19,18 @@ public class Location implements Serializable{
     private String displaySymbol;
     private int locationValue;
     private String description;
+    private Actor actor;
 
     public Location() {
+    }
+
+    public Location(int row, int column, boolean visited, String displaySymbol, int locationValue, String description) {
+        this.row = row;
+        this.column = column;
+        this.visited = visited;
+        this.displaySymbol = displaySymbol;
+        this.locationValue = locationValue;
+        this.description = description;
     }
     
     
@@ -73,18 +83,13 @@ public class Location implements Serializable{
         this.description = description;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + this.row;
-        hash = 53 * hash + this.column;
-        hash = 53 * hash + (this.visited ? 1 : 0);
-        hash = 53 * hash + Objects.hashCode(this.displaySymbol);
-        hash = 53 * hash + this.locationValue;
-        hash = 53 * hash + Objects.hashCode(this.description);
-        return hash;
+    public Actor getActor() {
+        return actor;
     }
 
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -115,14 +120,28 @@ public class Location implements Serializable{
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
+        
+        
         return true;
     }
 
     @Override
-    public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", displaySymbol=" + displaySymbol + ", locationValue=" + locationValue + ", description=" + description + '}';
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + this.row;
+        hash = 53 * hash + this.column;
+        hash = 53 * hash + (this.visited ? 1 : 0);
+        hash = 53 * hash + Objects.hashCode(this.displaySymbol);
+        hash = 53 * hash + this.locationValue;
+        hash = 53 * hash + Objects.hashCode(this.description);
+        hash = 53 * hash + Objects.hashCode(this.actor);
+        return hash;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", displaySymbol=" + displaySymbol + ", locationValue=" + locationValue + ", description=" + description + ", actor=" + actor + '}';
+    }
     
     
     

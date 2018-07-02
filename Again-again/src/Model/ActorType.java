@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,11 +10,12 @@ package Model;
  *
  * @author Levi
  */
-public enum QuestionType {
-    SaveGame,
-    LoadGame,
-    BossRoom,
+public enum ActorType {
+    mainplayer,
+    werewolf,
+    skeleton,
+    spider,
+    zombie,
+    vampire;
     
 }
-
-
