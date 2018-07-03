@@ -18,6 +18,10 @@ public class ItemLocation extends Location{
     public ItemLocation() {
     }
 
+    public ItemLocation(int row, int column, boolean visited, String displaySymbol, int locationValue, String description) {
+        super(row, column, visited, displaySymbol, locationValue, description);
+    }
+
     public Item getItem() {
         return item;
     }

@@ -20,6 +20,7 @@ public class Location implements Serializable{
     private int locationValue;
     private String description;
     private Actor actor;
+    private Question question;
 
     public Location() {
     }
@@ -51,6 +52,15 @@ public class Location implements Serializable{
         this.column = column;
     }
 
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+
+    
     public boolean isVisited() {
         return visited;
     }

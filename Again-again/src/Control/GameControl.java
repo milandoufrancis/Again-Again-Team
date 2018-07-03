@@ -54,6 +54,7 @@ public class GameControl {
         werewolf.setDefence(8);
         werewolf.setActorScore(25);
         actors[1] = werewolf;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
         
         //Actor object for the monster, 
         Actor skeleton = new Actor();
@@ -63,6 +64,7 @@ public class GameControl {
         skeleton.setActorDamage(3);
         skeleton.setActorScore(5);
         actors[2] = skeleton;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
         
         //Actor object for a spider
         Actor spider = new Actor();
@@ -72,6 +74,7 @@ public class GameControl {
         spider.setActorDamage(2);
         spider.setActorScore(2);
         actors[3] = spider;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
         
         //Actor Object for a zombie
         Actor zombie = new Actor();
@@ -81,6 +84,7 @@ public class GameControl {
         zombie.setActorDamage(10);
         zombie.setActorScore(8);
         actors[4] = zombie;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
 
         //Actor Object for vampire
         Actor vampire = new Actor();
@@ -90,6 +94,7 @@ public class GameControl {
         vampire.setActorDamage(15);
         vampire.setActorScore(50);
         actors[5] = vampire;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
         
         Actor ghoul = new Actor();
         ghoul.setDescription("Hey!!! watch out! they feed on dead people");
