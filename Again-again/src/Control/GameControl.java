@@ -91,6 +91,105 @@ public class GameControl {
         vampire.setActorScore(50);
         actors[5] = vampire;
         
+        Actor ghoul = new Actor();
+        ghoul.setDescription("Hey!!! watch out! they feed on dead people");
+        ghoul.setCoordinates(new Point(4, 1));
+        ghoul.setActorHealth(25);
+        ghoul.setActorDamage(6);
+        ghoul.setDefence(8);
+        ghoul.setActorScore(25);
+        actors[1] = ghoul;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
+
+        //Actor object for the monster, Anaconda
+        Actor anaconda = new Actor();
+        anaconda.setDescription("The anaconda is watching and ready to attack!");
+        anaconda.setCoordinates(new Point(3, 2));
+        anaconda.setActorHealth(25);
+        anaconda.setActorDamage(6);
+        anaconda.setDefence(8);
+        anaconda.setActorScore(25);
+        actors[1] = anaconda;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
+
+        //Actor object for the monster, Ogre
+        Actor ogre = new Actor();
+        ogre.setDescription("They love to surprise their prey");
+        ogre.setCoordinates(new Point(4, 3));
+        ogre.setActorHealth(25);
+        ogre.setActorDamage(6);
+        ogre.setDefence(8);
+        ogre.setActorScore(25);
+        actors[1] = ogre;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
+
+        //Actor object for the monster, Nemesis
+        Actor nemesis = new Actor();
+        nemesis.setDescription("This creature stands before you, teeth bared and claws ready");
+        nemesis.setCoordinates(new Point(3, 4));
+        nemesis.setActorHealth(25);
+        nemesis.setActorDamage(6);
+        nemesis.setDefence(8);
+        nemesis.setActorScore(25);
+        actors[1] = nemesis;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
+
+        //Actor object for the monster, Gollum
+        Actor gollum = new Actor();
+        gollum.setDescription("This creature stands before you, teeth bared and claws ready");
+        gollum.setCoordinates(new Point(3, 3));
+        gollum.setActorHealth(25);
+        gollum.setActorDamage(6);
+        gollum.setDefence(8);
+        gollum.setActorScore(25);
+        actors[1] = gollum;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
+
+        //Actor object for the monster, Lizarus
+        Actor lizarus = new Actor();
+        lizarus.setDescription("This creature stands before you, teeth bared and claws ready");
+        lizarus.setCoordinates(new Point(4, 3));
+        lizarus.setActorHealth(25);
+        lizarus.setActorDamage(6);
+        lizarus.setDefence(8);
+        lizarus.setActorScore(25);
+        actors[1] = lizarus;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
+
+        //Actor object for the monster, Crapus
+        Actor crapus = new Actor();
+        crapus.setDescription("This creature stands before you, teeth bared and claws ready");
+        crapus.setCoordinates(new Point(2, 1));
+        crapus.setActorHealth(25);
+        crapus.setActorDamage(6);
+        crapus.setDefence(8);
+        crapus.setActorScore(25);
+        actors[1] = crapus;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
+
+        //Actor object for the monster Goblin
+        Actor goblin = new Actor();
+        goblin.setDescription("This creature stands before you, teeth bared and claws ready");
+        goblin.setCoordinates(new Point(2, 4));
+        goblin.setActorHealth(25);
+        goblin.setActorDamage(6);
+        goblin.setDefence(8);
+        goblin.setActorScore(25);
+        actors[1] = goblin;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
+
+        //Actor object for the monster, Zorn
+        Actor zorn = new Actor();
+        zorn.setDescription("This creature stands before you, teeth bared and claws ready");
+        zorn.setCoordinates(new Point(2, 3));
+        zorn.setActorHealth(25);
+        zorn.setActorDamage(6);
+        zorn.setDefence(8);
+        zorn.setActorScore(25);
+        actors[1] = zorn;
+        actors[ActorType.mainplayer.ordinal()] = mainplayer;
+
+        
         return actors;
     }
 

@@ -88,6 +88,12 @@ if (locations == null){
     
     locations[3][1].setActor(actors[ActorType.skeleton.ordinal()]);
     
+     private static int assignItemsToLocations(Location[][] locations, InventoryItem[] itemsInGame){
+        	// Check for invalid input
+if (locations == null){
+    return -1;
+}
+    
 
 
 return 1;}
