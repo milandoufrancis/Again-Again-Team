@@ -16,6 +16,15 @@ public enum ActorType {
     skeleton,
     spider,
     zombie,
-    vampire;
+    vampire,
+    ghoul,
+    anaconda,
+    ogre,
+    nemesis,
+    gollum,
+    lizarus,
+    crapus,
+    goblin,
+    zorn;
     
 }
