@@ -12,6 +12,7 @@ import Model.Item;
 import Model.ItemLocation;
 import Model.Location;
 import Model.Map;
+import Model.TrapLocation;
 import again.again.AgainAgain;
 
 /**
@@ -23,7 +24,7 @@ public class MapControl {
     private static Location[][] createLocations(int numRows, int numCol) {
         Location[][] locations = new Location[numRows][numCol];
         locations[0][0] = new Location(0, 0, true, "   ", 1, "You stand here at the enterance, staring at the void.");
-        locations[0][1] = new Location(0, 1, false, " T ", 3, "It's a trap!");
+        locations[0][1] = new TrapLocation(0, 1, false, " T ", 3, "It's a trap!", "It's an acid trap", 14);
         locations[0][2] = new Location(0, 2, false, " :) ", 1, "You're safe in this place... for now.");
         locations[0][3] = new Location(0, 3, false, " M ", 3, "A coffin is open and a body rises from it. This is going to suck.");
         locations[0][4] = new ItemLocation(0, 4, false, " I ", 2, "It appears the vampire was guarding an arrow, but for who?");
@@ -41,8 +42,8 @@ public class MapControl {
         locations[3][1] = new ItemLocation(3, 1, false, " I ", 2, "You find a broken wall with some fruit in it, surprisingly still ripe");
         locations[3][2] = new Location(3, 2, false, " M ", 3, "A pair of yellow, wolfish eyes are staring at you, with a low growling echoing through the room.");
         locations[3][3] = new Location(3, 3, false, " M ", 3, "You hear some moaning sounds and labored breathing as something that smells dead comes closer to you.");
-        locations[3][4] = new TrapLocation(3, 4, false, " T ", 3, "It's a trap!");
-        locations[4][0] = new TrapLocation(4, 0, false, " T ", 3, "It's a trap!");
+        locations[3][4] = new TrapLocation(3, 4, false, " T ", 3, "It's a trap!", "It's the arrow trap", 10);
+        locations[4][0] = new TrapLocation(4, 0, false, " T ", 3, "It's a trap!", "It's a bomb trap", 15);
         locations[4][1] = new Location(4, 1, false, " B ", 5, "You have reached a huge monster that resembles a werewolf. This must be their alpha male. Hope you have some silver on you.");
         locations[4][2] = new ItemLocation(4, 2, false, " I ", 2, "There is a pedestal that holds up a glass, angel-shaped flask of shining, white water. Extremely useful against the undead!");
         locations[4][3] = new Location(4, 3, false, " :) ", 1, "You're safe in this place... for now.");
@@ -51,10 +52,10 @@ public class MapControl {
         return locations;
     }
 
-    public static Map createMap(Game game, int noOfRows, int noOfColumns) {
+    public static void createMap(Game game, int noOfRows, int noOfColumns) {
 // check for invalid inputs
         if (game == null || noOfRows < 0 || noOfColumns < 0) {
-            return null;
+            return;
         }
 // create the map object and assign values to it 
         Map map = new Map();
@@ -69,17 +70,20 @@ public class MapControl {
 // create a two-dimensional array of locations and assign array to the map 
         Location[][] locations = createLocations(map.getRowCount(), map.getColumnCount());
         if (locations == null) {
-            return null;
+            return;
         }
 //call setter to save a locations array in the map object
         map.setLocations(locations);
+        assignActorsToLocations(locations);
+        assignItemsToLocations(locations);
 
-        return map;
+        return;
     }
 // assign actors and items to locations
 
     private static int assignActorsToLocations(Location[][] locations) {
 // Check for invalid input
+
         if (locations == null) {
             return -1;
         }
@@ -89,15 +93,49 @@ public class MapControl {
         //locations[0][0].setActor(actor);
         Actor actors[] = AgainAgain.getGame().getActors();
 
-        locations[3][1].setActor(actors[ActorType.skeleton.ordinal()]);
+        locations[0][0].setActor(actors[ActorType.skeleton.ordinal()]);
+        locations[0][3].setActor(actors[ActorType.werewolf.ordinal()]);
+        locations[1][2].setActor(actors[ActorType.gollum.ordinal()]);
+        locations[1][3].setActor(actors[ActorType.spider.ordinal()]);
+        locations[1][4].setActor(actors[ActorType.anaconda.ordinal()]);
+        locations[2][0].setActor(actors[ActorType.goblin.ordinal()]);
+        locations[2][2].setActor(actors[ActorType.vampire.ordinal()]);
+        locations[2][4].setActor(actors[ActorType.lizarus.ordinal()]);
+        locations[3][0].setActor(actors[ActorType.zombie.ordinal()]);
+        locations[3][2].setActor(actors[ActorType.ghoul.ordinal()]);
+        locations[3][3].setActor(actors[ActorType.ogre.ordinal()]);
+        locations[4][1].setActor(actors[ActorType.crapus.ordinal()]);
+        locations[4][4].setActor(actors[ActorType.zorn.ordinal()]);
+
         return 1;
     }
 
-    private static int assignItemsToLocations(Location[][] locations, Item[] itemsInGame) {
+    private static int assignItemsToLocations(Location[][] locations) {
         // Check for invalid input
         if (locations == null) {
             return -1;
         }
+        // Assign items to each locations
+        ItemLocation itemL = (ItemLocation) locations[0][4];
+        itemL.setItem(Item.Herbs);
+        
+        itemL = (ItemLocation) locations[1][1];
+        itemL.setItem(Item.Water);
+        
+        itemL = (ItemLocation) locations[1][0];
+        itemL.setItem(Item.Fruits);
+        
+        itemL = (ItemLocation) locations[2][1];
+        itemL.setItem(Item.Shield);
+        
+        itemL = (ItemLocation) locations[2][3];
+        itemL.setItem(Item.Sword);
+        
+        itemL = (ItemLocation) locations[3][1];
+        itemL.setItem(Item.Silver_Arrow);
+        
+        itemL = (ItemLocation) locations[4][2];
+        itemL.setItem(Item.Herbs);
 
         return 1;
     }

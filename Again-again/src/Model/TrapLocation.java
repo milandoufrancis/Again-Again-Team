@@ -15,6 +15,14 @@ public class TrapLocation extends Location{
     private String trapType;
     private int trapScore;
 
+    public TrapLocation( int row, int column, boolean visited, String displaySymbol, int locationValue, String description, String trapType, int trapScore) {
+        super(row, column, visited, displaySymbol, locationValue, description);
+        this.trapType = trapType;
+        this.trapScore = trapScore;
+    }
+   
+    
+
     public String getTrapType() {
         return trapType;
     }
