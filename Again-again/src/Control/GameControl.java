@@ -216,6 +216,10 @@ public class GameControl {
         player.setActor(actorList[0]);
         // call setter to save list of players in the game
         game.setActors(actorList);
+        MapControl.createMap(game, 5, 5);
+        if(game.getMap() == null){
+            return -1;
+        }
         
 // Create the lists of used in the game
         Question[] questions = GameControl.createQuestions();
