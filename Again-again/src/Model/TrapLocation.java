@@ -14,7 +14,9 @@ import java.util.Objects;
 public class TrapLocation extends Location{
     private String trapType;
     private int trapScore;
-
+    
+    
+    
     public String getTrapType() {
         return trapType;
     }
