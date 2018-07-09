@@ -66,11 +66,11 @@ class GameMenuView extends View {
 //Print the title
         System.out.print("\nAgain&Again dark dungeaon\n");
 //Print the column numbers for each column
-        System.out.print("1|2|3|4|5\n");
+        System.out.print("   1  |  2 | 3 |  4  | 5  \n");
 //for every row in map
         for (int row = 0; row < locations.length; row++) {
 //Print a row divider
-        System.out.print("-------\n");
+        System.out.print("---------------------------\n");
 //Print the row number on a new line
             System.out.print(row + 1);
 //for every column in the row
@@ -88,7 +88,7 @@ class GameMenuView extends View {
             System.out.print("|\n");
         
         }
-        System.out.print("----------\n");
+        System.out.print("---------------------------\n");
     }
 
     private void viewItem() {

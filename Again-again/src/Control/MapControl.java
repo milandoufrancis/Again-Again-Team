@@ -23,8 +23,8 @@ public class MapControl {
 
     private static Location[][] createLocations(int numRows, int numCol) {
         Location[][] locations = new Location[numRows][numCol];
-        locations[0][0] = new Location(0, 0, true, "   ", 1, "You stand here at the enterance, staring at the void.");
-        locations[0][1] = new TrapLocation(0, 1, false, " T ", 3, "It's a trap!", "It's an acid trap", 14);
+        locations[0][0] = new Location(0, 0, true, "  X ", 1, "You stand here at the enterance, staring at the void.");
+        locations[0][1] = new TrapLocation(0, 1, false, "  T  ", 3, "It's a trap!", "It's an acid trap", 14);
         locations[0][2] = new Location(0, 2, false, " :) ", 1, "You're safe in this place... for now.");
         locations[0][3] = new Location(0, 3, false, " M ", 3, "A coffin is open and a body rises from it. This is going to suck.");
         locations[0][4] = new ItemLocation(0, 4, false, " I ", 2, "It appears the vampire was guarding an arrow, but for who?");
