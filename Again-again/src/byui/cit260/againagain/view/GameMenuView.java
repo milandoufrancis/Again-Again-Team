@@ -29,17 +29,20 @@ class GameMenuView extends View{
         //System.out.println("doaction called");
         //String menuItem = inputs[0];
 
-        switch (selection) {
+        switch (inputs[0]) {
             case "V":// to view location
                 this.displayMap();
                 break;
+                
             case "I":// list of items
                 this.viewItem();
                 break;
+                
             case "J":
                 this.viewActors();
                 break;
-                case "Q":
+                
+            case "Q":
                 System.out.println("Quit the game");
                 return true;
 
@@ -49,7 +52,18 @@ class GameMenuView extends View{
         return true;
         
     }
+    
+public void displayMap() {
+    System.out.println("*** displayMap function called ***");
+}
 
+public void viewItem() {
+    System.out.println("*** viewItem function called ***");
+}
+
+public void viewActors() {
+    System.out.println("*** viewActors function called ***");
+}
     
     
 }
