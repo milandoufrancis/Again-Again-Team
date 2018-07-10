@@ -185,7 +185,7 @@ public class GameControl {
 
         //Actor object for the monster, Zorn
         Actor zorn = new Actor();
-        zorn.setDescription("This creature stands before you, teeth bared and claws ready");
+        zorn.setDescription("Sounds oddly like this weird saxophonist you once listened to...");
         zorn.setCoordinates(new Point(2, 3));
         zorn.setActorHealth(25);
         zorn.setActorDamage(6);

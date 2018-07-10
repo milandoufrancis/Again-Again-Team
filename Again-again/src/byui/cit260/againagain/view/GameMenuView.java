@@ -64,7 +64,7 @@ class GameMenuView extends View {
 //locations = get the 2-D locations array from the map
         Location[][] locations = game.getMap().getLocations();
 //Print the title
-        System.out.print("\nAgain&Again dark dungeaon\n");
+        System.out.print("\nAgain&Again Dark Dungeon\n");
 //Print the column numbers for each column
         System.out.print("  1  |  2 | 3 |  4  | 5  \n");
 //for every row in map
@@ -95,8 +95,11 @@ class GameMenuView extends View {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    //Print an alphabetical list of actors that are currently programmed into the game.
     private void viewActors() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Here are the following actors within this game: \n");
+        System.out.print(this);
+        
     }
 
 }

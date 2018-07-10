@@ -32,8 +32,8 @@ public class TrapMenuView extends View {
         if (health <= 0) {
             System.out.println("You're dead!");
             return true;
-        } else if (health > 0 && health < 5.0) {
-            System.out.println("You're almost died!");
+        } else if (health > 0 && health < 5) {
+            System.out.println("You're almost dead!");
         } else {
             System.out.println("You're still alive");
         }

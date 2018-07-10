@@ -17,6 +17,7 @@ public class Player implements Serializable {
 
     private String currentFile;
     private String name;
+    private int PlayerLevel;
     //private ArrayList<Game> games = new ArrayList<Game>();
     private Actor actor;
 
