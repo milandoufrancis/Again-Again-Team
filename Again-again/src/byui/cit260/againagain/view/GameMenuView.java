@@ -5,7 +5,9 @@
  */
 package byui.cit260.againagain.view;
 
+import Control.GameControl;
 import Model.Game;
+import Model.Item;
 import Model.Location;
 import again.again.AgainAgain;
 
@@ -45,7 +47,12 @@ class GameMenuView extends View {
             case "J":
                 this.viewActors();
                 break;
-
+            case "Y":
+                Item[] items = GameControl.doInsertionSort(Item.values());
+                for (Item item : items){
+                    System.out.println(item.getItemName() + " " +  item.getItemType());
+                }
+                
             case "Q":
                 System.out.println("Quit the game");
                 return true;
@@ -98,5 +105,5 @@ class GameMenuView extends View {
     private void viewActors() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
 }

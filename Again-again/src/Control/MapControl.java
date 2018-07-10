@@ -139,5 +139,7 @@ public class MapControl {
 
         return 1;
     }
-// Assign all other types objects to locations (e.g., questions, spells) ...  
+// Assign all other types objects to locations (e.g., questions, spells) ...
+    
+    
 }
