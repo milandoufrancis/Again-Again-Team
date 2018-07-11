@@ -255,5 +255,19 @@ public class GameControl {
        //Assign the object to the next position in the array
        return questionList;
     }  
-      
+     public static Item[] doInsertionSort(Item[] input){
+        Item[] items = input.clone();
+        Item temp;
+        for (int i = 1; i < input.length; i++) {
+            for(int j = i ; j > 0 ; j--){
+                if(items[j].getItemType().compareTo(items[j-1].getItemType()) < 0 ){
+                    temp = items[j];
+                    items[j] = items[j-1];
+                    items[j-1] = temp;
+                }
+            }
+        }
+        return items;
+    }
 }
+
