@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Exeptions.FightControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,16 +19,16 @@ public class FightControlTest {
     }
 
     /**
-     * Test of fightControl method, of class FightControl.
+     * Test of takeDamage method, of class FightControl.
      */
     @Test
-    public void testFightControl() {
+    public void testFightControl() throws FightControlException{
         System.out.println("Test 1");
         int Health = 80;
         int Defense = 5;
         int Weapon = 20;
         int expResult = 76;
-        int result = FightControl.fightControl(Health, Defense, Weapon);
+        int result = FightControl.takeDamage(Health, Defense, Weapon);
         assertEquals(expResult, result, 0.0);
 
         System.out.println("Test 2");
@@ -35,7 +36,7 @@ public class FightControlTest {
         Defense = 6;
         Weapon = 24;
         expResult = 56;
-        result = FightControl.fightControl(Health, Defense, Weapon);
+        result = FightControl.takeDamage(Health, Defense, Weapon);
         assertEquals(expResult, result, 0.0);
 
         System.out.println("Test 3");
@@ -43,7 +44,7 @@ public class FightControlTest {
         Defense = 32;
         Weapon = 25;
         expResult = -1;
-        result = FightControl.fightControl(Health, Defense, Weapon);
+        result = FightControl.takeDamage(Health, Defense, Weapon);
         assertEquals(expResult, result, 0.0);
 
     }

@@ -5,28 +5,30 @@
  */
 package Control;
 
+import Exeptions.FightControlException;
+
 /**
  *
  * @author My Laptop
  */
 public class FightControl {
-    public static int fightControl(int Health, int Defense, int Weapon){
+    public static int takeDamage(int Health, int Defense, int Weapon)throws FightControlException{
         if (Health <= 0 || Health > 100){
-            return -1;
+            throw new FightControlException("The health cannot be negative, or greater than hundred");
         }
         
         if (Defense < 0 || Defense > 80){
-            return -1;
+            throw new FightControlException("The defense cannot be negagite, equal to zero and greater than 80");
         }
         
         if (Weapon < 0 || Weapon > 40){
-            return -1;
+            throw new FightControlException("The weapon cannot be negagite, equal to zero and greater than 40");
         }
         
         int Attack = Health - (Weapon / Defense);
         
         if (Attack < 0){
-            return -1;
+            throw new FightControlException("The dattack cannot be negagite, equal to zero");
         }
         return Attack;
     }

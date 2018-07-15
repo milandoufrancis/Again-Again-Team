@@ -57,9 +57,12 @@ public class AgainAgain {
 //     * @param args the command line arguments
 //     */
     public static void main(String[] args) {
-        StartProgramView startProgramView = new StartProgramView();
+        try {StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
-        
+        }catch (Throwable ie){
+            System.out.println("Shut down the game");
+           
+        }
         
 //        Player player = new Player();
 //        player.setCurrentFile("yes");

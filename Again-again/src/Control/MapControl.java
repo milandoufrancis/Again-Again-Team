@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Exeptions.MapControlException;
 import Model.Actor;
 import Model.ActorType;
 import Model.Game;
@@ -14,6 +15,7 @@ import Model.Location;
 import Model.Map;
 import Model.TrapLocation;
 import again.again.AgainAgain;
+import java.awt.Point;
 
 /**
  *
@@ -21,7 +23,7 @@ import again.again.AgainAgain;
  */
 public class MapControl {
 
-    private static Location[][] createLocations(int numRows, int numCol) {
+    private static Location[][] createLocations(int numRows, int numCol)throws MapControlException {
         Location[][] locations = new Location[numRows][numCol];
         locations[0][0] = new Location(0, 0, true, "  X ", 1, "You stand here at the enterance, staring at the void.");
         locations[0][1] = new TrapLocation(0, 1, false, "  T  ", 3, "It's a trap!", "It's an acid trap", 14);
@@ -52,7 +54,7 @@ public class MapControl {
         return locations;
     }
 
-    public static void createMap(Game game, int noOfRows, int noOfColumns) {
+    public static void createMap(Game game, int noOfRows, int noOfColumns)throws MapControlException {
 // check for invalid inputs
         if (game == null || noOfRows < 0 || noOfColumns < 0) {
             return;
@@ -85,7 +87,7 @@ public class MapControl {
 // Check for invalid input
 
         if (locations == null) {
-            return -1;
+            throw new MapControlException("The input must be valid");
         }
 
 // Assign the actor to starting its location
@@ -113,7 +115,7 @@ public class MapControl {
     private static int assignItemsToLocations(Location[][] locations) {
         // Check for invalid input
         if (locations == null) {
-            return -1;
+            throw new MapControlException("The input must be valid for items assign to a location");
         }
         // Assign items to each locations
         ItemLocation itemL = (ItemLocation) locations[0][4];
@@ -139,7 +141,36 @@ public class MapControl {
 
         return 1;
     }
-// Assign all other types objects to locations (e.g., questions, spells) ...
-    
+
+public static Location moveActor(Actor actor, int newRow, int newColumn) {
+ if (actor == null ){
+ throw new MapControlException("The input must be valid");
+ }
+ //game = get the currentGame in the main class
+ Game game = AgainAgain.getGame();
+ //map = get the map in the game object
+ Map map = game.getMap();
+ //locations = get the locations in the map
+ Location [][] locations = map.getLocations();
+// if (newRow < 1 || newRow > noOfRows in map OR
+ //newColumn < 1 OR newColumn > noOfColumns in map) then
+ if (newRow < 1 || newRow > map.getRowCount() || newColumn < 1 || newColumn > map.getColumnCount()){
+ throw new MapControlException("The input must be valid");
+         }
+ //currentRow = get the row from the actor
+ int currentRow = actor.getCoordinates().y;
+ int currentColumn = actor.getCoordinates().x;
+ //oldLocation = get the location from the locations
+ Location oldLocation = locations[currentRow][currentColumn];
+ //array at the current row and column
+ Location location = locations[currentRow][currentColumn];
+ //newLocation = get the location at the new row and column
+ Location newLocation = locations[newRow][newColumn];
+ //set row in actor to newRow
+ Point point = new Point( newRow,newColumn);
+ actor.setCoordinates(point);
+ //set column in actor to newColumn
+ return newLocation;
+}    
     
 }
