@@ -6,6 +6,7 @@
 package byui.cit260.againagain.view;
 
 import Control.GameControl;
+import Control.MapControl;
 import Model.Game;
 import Model.Item;
 import Model.Location;
@@ -26,7 +27,11 @@ class GameMenuView extends View {
         boolean valid = false;
         inputs[0] = getInput("V - This command helps you to display map.\n"
                 + "I - this helps to view the list of items\n"
-                + "J - to view a list of actors\n");
+                + "J - to view a list of actors\n"
+                
+               + "S - moves the actor\n" 
+          
+                + "Q - Quit game\n");
         return inputs;
     }
 
@@ -37,7 +42,11 @@ class GameMenuView extends View {
 
         switch (inputs[0]) {
             case "V":// to view location
-                this.displayMap();
+                MapControl.displayMap();
+                break;
+            case "S": // to move the actor
+                MoveActorView actorMove = new MoveActorView();
+                actorMove.display();
                 break;
 
             case "I":// list of items
@@ -60,43 +69,11 @@ class GameMenuView extends View {
             default:
                 System.out.println("Invalid menu item.");
         }
-        return true;
+        return false;
 
     }
 
-    private void displayMap() {
-        //System.out.println("***displaymap stub function called***");
-        //game = get the currentGame from the main class
-        Game game = AgainAgain.getGame();
-//locations = get the 2-D locations array from the map
-        Location[][] locations = game.getMap().getLocations();
-//Print the title
-        System.out.print("\nAgain&Again dark dungeaon\n");
-//Print the column numbers for each column
-        System.out.print("  1  |  2 | 3 |  4  | 5  \n");
-//for every row in map
-        for (int row = 0; row < locations.length; row++) {
-//Print a row divider
-        System.out.print("  -------------------------\n");
-//Print the row number on a new line
-            System.out.print(row + 1);
-//for every column in the row
-            for (int col = 0; col < locations[row].length; col++)
-            {
-                //Print a column divider
-                System.out.print("|");
-                Location location = locations[row][col]; 
-                        if (location.isVisited()){
-                            System.out.print(location.getDisplaySymbol());
-                        }else{
-                            System.out.print(" ?? ");
-                        }
-            }
-            System.out.print("|\n");
-        
-        }
-        System.out.print("---------------------------\n");
-    }
+    
 
     private void viewItem() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
