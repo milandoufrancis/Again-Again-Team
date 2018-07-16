@@ -269,5 +269,18 @@ public class GameControl {
         }
         return items;
     }
+     
+     public static double CalcAverage(Actor[] actors){
+    //Find the average of the list
+average(list): number;
+BEGIN
+total = 0
+FOR index = 0 TO list.length -1
+ total = total + list[index]
+ENDFOR
+average = total / sizeOfList
+RETURN average
+END
+}
 }
 

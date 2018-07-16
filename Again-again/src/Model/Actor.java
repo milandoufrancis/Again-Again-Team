@@ -12,6 +12,7 @@ public class Actor {
     private int actorDamage;
     private int actorScore;
     private int defence;
+    private int actorName;
     
     public Actor() {
         
