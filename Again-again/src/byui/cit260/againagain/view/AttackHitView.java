@@ -6,6 +6,7 @@
 package byui.cit260.againagain.view;
 
 import Control.FightControl;
+import Exeptions.FightControlException;
 import Model.Actor;
 import Model.Enemy;
 import Model.Player;
@@ -27,6 +28,14 @@ public class AttackHitView extends View {
 
     @Override
     public boolean doAction(String[] inputs) {
+        try {
+            FightControl.takeDamage(10, 20, 5);
+        }catch (FightControlException ie){
+            System.out.println(ie.getMessage());
+            return false;
+        }
+            
+       
         Actor player = new Actor();
         Enemy enemy = new Enemy();
 
@@ -43,8 +52,14 @@ public class AttackHitView extends View {
                 return true;
 
             case "A":
-                player.setActorHealth(FightControl.fightControl(player.getActorHealth(), player.getDefence(), enemy.getEnemyDamage()));
-                enemy.setEnemyHP(FightControl.fightControl(enemy.getEnemyHP(), enemy.getDefence(), player.getActorDamage()));
+                 try {
+            player.setActorHealth(FightControl.takeDamage(player.getActorHealth(), player.getDefence(), enemy.getEnemyDamage()));
+                enemy.setEnemyHP(FightControl.takeDamage(enemy.getEnemyHP(), enemy.getDefence(), player.getActorDamage()));
+        }catch (FightControlException ie){
+            System.out.println(ie.getMessage());
+            return false;
+        }
+               
                 break;
 
             default:
@@ -63,5 +78,6 @@ public class AttackHitView extends View {
         }
         return false;
     }
-
 }
+
+

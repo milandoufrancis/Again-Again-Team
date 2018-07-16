@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Exeptions.MapControlException;
 import Model.Actor;
 import Model.ActorType;
 import Model.Game;
@@ -198,7 +199,7 @@ public class GameControl {
         return actors;
     }
 
-    public static int createNewGame(Player player) {
+    public static int createNewGame(Player player) throws MapControlException{
         // Check for invalid inputs
         if (player == null) {
             return -1;
