@@ -11,6 +11,7 @@ import Model.Game;
 import Model.Item;
 import Model.Location;
 import again.again.AgainAgain;
+import Model.Actor;
 
 /**
  *
@@ -28,9 +29,8 @@ class GameMenuView extends View {
         inputs[0] = getInput("V - This command helps you to display map.\n"
                 + "I - this helps to view the list of items\n"
                 + "J - to view a list of actors\n"
-                
-               + "S - moves the actor\n" 
-          
+                + "A - Calculate average damage of the actors\n"
+                + "S - moves the actor\n" 
                 + "Q - Quit game\n");
         return inputs;
     }
@@ -61,10 +61,14 @@ class GameMenuView extends View {
                 for (Item item : items){
                     System.out.println(item.getItemName() + " " +  item.getItemType());
                 }
-                
+              
             case "Q":
                 System.out.println("Quit the game");
                 return true;
+                
+            case "A":
+                GameControl.CalcAverageDamage(AgainAgain.getGame().getActors());
+                break;
 
             default:
                 System.out.println("Invalid menu item.");
