@@ -15,6 +15,7 @@ import Model.Player;
 import Model.Question;
 import again.again.AgainAgain;
 import java.awt.Point;
+import java
 
 /**
  *
@@ -271,15 +272,14 @@ public class GameControl {
         return items;
     }
      
-     public static double CalcAverage(Actor[] actors){
-    //Find the average of the list
-average(list): number;
-BEGIN
-total = 0
-FOR index = 0 TO list.length -1
+     public static double CalcAverageDamage(Actor[] actors){
+    //Find the average of the list of actors and calculate their damage output 
+average(actors): 15;
+double total = 0;
+FOR (index = 0 TO list.length -1){
  total = total + list[index]
-ENDFOR
-average = total / sizeOfList
+         }
+average = total / actors[]
 RETURN average
 END
 }

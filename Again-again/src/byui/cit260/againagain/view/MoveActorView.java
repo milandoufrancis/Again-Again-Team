@@ -19,8 +19,8 @@ public class MoveActorView extends View{
 
  //Print instructions to move an actor
  System.out.println("w - moves the actor up\n"
-                + "A - moves the actor to the left\n"
-                + "S - moves the actor to the right\n"
+                + "L - moves the actor to the left\n"
+                + "R - moves the actor to the right\n"
                 + "D - moves the actor down\n"
                 + "Q - Quit game\n");
  
