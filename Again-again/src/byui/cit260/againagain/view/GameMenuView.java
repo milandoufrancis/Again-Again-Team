@@ -6,6 +6,7 @@
 package byui.cit260.againagain.view;
 
 import Control.GameControl;
+import Control.MapControl;
 import Model.Game;
 import Model.Item;
 import Model.Location;
@@ -26,7 +27,11 @@ class GameMenuView extends View {
         boolean valid = false;
         inputs[0] = getInput("V - This command helps you to display map.\n"
                 + "I - this helps to view the list of items\n"
-                + "J - to view a list of actors\n");
+                + "J - to view a list of actors\n"
+                
+               + "S - moves the actor\n" 
+          
+                + "Q - Quit game\n");
         return inputs;
     }
 
@@ -37,7 +42,11 @@ class GameMenuView extends View {
 
         switch (inputs[0]) {
             case "V":// to view location
-                this.displayMap();
+                MapControl.displayMap();
+                break;
+            case "S": // to move the actor
+                MoveActorView actorMove = new MoveActorView();
+                actorMove.display();
                 break;
 
             case "I":// list of items
@@ -60,7 +69,7 @@ class GameMenuView extends View {
             default:
                 System.out.println("Invalid menu item.");
         }
-        return true;
+        return false;
 
     }
 

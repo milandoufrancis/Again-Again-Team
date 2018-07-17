@@ -83,7 +83,7 @@ public class MapControl {
     }
 // assign actors and items to locations
 
-    private static int assignActorsToLocations(Location[][] locations) {
+    private static int assignActorsToLocations(Location[][] locations) throws MapControlException{
 // Check for invalid input
 
         if (locations == null) {
@@ -112,7 +112,7 @@ public class MapControl {
         return 1;
     }
 
-    private static int assignItemsToLocations(Location[][] locations) {
+    private static int assignItemsToLocations(Location[][] locations)throws MapControlException {
         // Check for invalid input
         if (locations == null) {
             throw new MapControlException("The input must be valid for items assign to a location");
@@ -142,7 +142,7 @@ public class MapControl {
         return 1;
     }
 
-public static Location moveActor(Actor actor, int newRow, int newColumn) {
+public static Location moveActor(Actor actor, int newRow, int newColumn) throws MapControlException{
  if (actor == null ){
  throw new MapControlException("The input must be valid");
  }
@@ -154,7 +154,7 @@ public static Location moveActor(Actor actor, int newRow, int newColumn) {
  Location [][] locations = map.getLocations();
 // if (newRow < 1 || newRow > noOfRows in map OR
  //newColumn < 1 OR newColumn > noOfColumns in map) then
- if (newRow < 1 || newRow > map.getRowCount() || newColumn < 1 || newColumn > map.getColumnCount()){
+ if (newRow < 0 || newRow > map.getRowCount() || newColumn < 0 || newColumn > map.getColumnCount()){
  throw new MapControlException("The input must be valid");
          }
  //currentRow = get the row from the actor
@@ -169,8 +169,46 @@ public static Location moveActor(Actor actor, int newRow, int newColumn) {
  //set row in actor to newRow
  Point point = new Point( newRow,newColumn);
  actor.setCoordinates(point);
- //set column in actor to newColumn
+ //implement visited location
+ newLocation.setVisited(true);
+ 
  return newLocation;
 }    
+public static void displayMap() {
+        //System.out.println("***displaymap stub function called***");
+        //game = get the currentGame from the main class
+        Game game = AgainAgain.getGame();
+//locations = get the 2-D locations array from the map
+        Location[][] locations = game.getMap().getLocations();
+//Print the title
+        System.out.print("\nAgain&Again dark dungeon\n");
+//Print the column numbers for each column
+        System.out.print("  1  |  2 | 3 |  4  | 5  \n");
+//for every row in map
+        for (int row = 0; row < locations.length; row++) {
+//Print a row divider
+        System.out.print("  -------------------------\n");
+//Print the row number on a new line
+            System.out.print(row + 1);
+//for every column in the row
+            for (int col = 0; col < locations[row].length; col++)
+            {
+                //Print a column divider
+                System.out.print("|");
+                Location location = locations[row][col]; 
+                //if the player is here print " !! "
+                if(AgainAgain.getGame().getPlayer().getActor().getCoordinates().x == row && AgainAgain.getGame().getPlayer().getActor().getCoordinates().y == col){ 
+                System.out.print(" !! ");
+                }else if (location.isVisited()){
+                            System.out.print(location.getDisplaySymbol());
+                        }else{
+                            System.out.print(" ?? ");
+                        }
+            }
+            System.out.print("|\n");
+        
+        }
+        System.out.print("---------------------------\n");
+    }
     
 }

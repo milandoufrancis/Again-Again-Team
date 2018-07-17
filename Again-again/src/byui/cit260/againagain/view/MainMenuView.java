@@ -6,6 +6,9 @@
 package byui.cit260.againagain.view;
 
 import Control.GameControl;
+import Control.MapControl;
+import Exeptions.FightControlException;
+import Exeptions.MapControlException;
 import again.again.AgainAgain;
 import java.util.Scanner;
 
@@ -13,14 +16,22 @@ import java.util.Scanner;
  *
  * @author Levi
  */
-class MainMenuView extends View {
+class MainMenuView extends View{
 
-    public boolean doAction(String[] inputs) {
+    public boolean doAction(String[] inputs){
         String menuItem = inputs[0];
 
+ //Print error passed with the exception
+ 
         switch (menuItem) {
             case "N":
-                startNewgame();
+                try {
+                    startNewgame();
+                    }catch (MapControlException ie){
+            System.out.println(ie.getMessage());
+            return false;
+        }
+                
                 break;
             case "H":
                 getHelp();
@@ -61,7 +72,7 @@ class MainMenuView extends View {
         return inputs;
     }
 
-    private void startNewgame() {
+    private void startNewgame() throws MapControlException{
         int success = GameControl.createNewGame(AgainAgain.getPlayer());
         GameMenuView menuView = new GameMenuView();
         menuView.display();
