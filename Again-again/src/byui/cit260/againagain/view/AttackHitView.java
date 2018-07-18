@@ -64,11 +64,14 @@ public class AttackHitView extends View {
             }
                 
             
-        } catch (FightControlException | NumberFormatException ie) {
+        } catch (FightControlException ie) {
             System.out.println(ie.getMessage());
             return false;
         }
-
-        
+     catch (NumberFormatException ie) {
+    
+        System.out.println("Please enter a number");
+            return false;
     }
+}
 }

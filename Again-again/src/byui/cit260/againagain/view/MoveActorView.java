@@ -26,10 +26,10 @@ public class MoveActorView extends View {
         MapControl.displayMap();
 
         //Print instructions to move an actor
-        System.out.println("w - moves the actor up\n"
-                + "A - moves the actor to the left\n"
-                + "S - moves the actor to the right\n"
-                + "D - moves the actor down\n"
+        System.out.println("w - moves the actor right\n"
+                + "A - moves the actor up\n"
+                + "S - moves the actor down\n"
+                + "D - moves the actor to the left\n"
                 + "Q - Quit game\n");
 
         inputs[0] = getInput("");
