@@ -42,7 +42,7 @@ public class BattleMenuView extends View {
                 System.out.println("You ran away.");
                 break;
             case "S":
-                System.out.println("You opened your pack to look for a...");
+                System.out.println("You opened your pack to look for a...\n");
                 //Call a method that opens a sub menu for the items the player
                 //has collected so far in the game.
                 break;
