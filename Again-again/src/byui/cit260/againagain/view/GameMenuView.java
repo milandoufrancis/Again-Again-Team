@@ -28,7 +28,7 @@ class GameMenuView extends View {
         inputs[0] = getInput("V - This command helps you to display map.\n"
                 + "I - this helps to view the list of items\n"
                 + "J - to view a list of actors\n"
-                
+                + "X - to trick the trap fight\n"
                + "S - moves the actor\n" 
           
                 + "Q - Quit game\n");
@@ -47,6 +47,10 @@ class GameMenuView extends View {
             case "S": // to move the actor
                 MoveActorView actorMove = new MoveActorView();
                 actorMove.display();
+                break;
+            case "X": // trap fight
+                AttackHitView trapAct = new AttackHitView();
+                trapAct.display();
                 break;
 
             case "I":// list of items

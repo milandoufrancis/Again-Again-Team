@@ -20,6 +20,8 @@ public class Location implements Serializable{
     private int locationValue;
     private String description;
     private Actor actor;
+    private Actor enemy;
+            
     private Question question;
 
     public Location() {
@@ -100,6 +102,17 @@ public class Location implements Serializable{
     public void setActor(Actor actor) {
         this.actor = actor;
     }
+
+    public Actor getEnemy() {
+        return enemy;
+    }
+
+    public void setEnemy(Actor enemy) {
+        this.enemy = enemy;
+    }
+    
+    
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

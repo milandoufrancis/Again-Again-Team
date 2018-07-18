@@ -95,19 +95,19 @@ public class MapControl {
         //locations[0][0].setActor(actor);
         Actor actors[] = AgainAgain.getGame().getActors();
 
-        locations[0][0].setActor(actors[ActorType.skeleton.ordinal()]);
-        locations[0][3].setActor(actors[ActorType.werewolf.ordinal()]);
-        locations[1][2].setActor(actors[ActorType.gollum.ordinal()]);
-        locations[1][3].setActor(actors[ActorType.spider.ordinal()]);
-        locations[1][4].setActor(actors[ActorType.anaconda.ordinal()]);
-        locations[2][0].setActor(actors[ActorType.goblin.ordinal()]);
-        locations[2][2].setActor(actors[ActorType.vampire.ordinal()]);
-        locations[2][4].setActor(actors[ActorType.lizarus.ordinal()]);
-        locations[3][0].setActor(actors[ActorType.zombie.ordinal()]);
-        locations[3][2].setActor(actors[ActorType.ghoul.ordinal()]);
-        locations[3][3].setActor(actors[ActorType.ogre.ordinal()]);
-        locations[4][1].setActor(actors[ActorType.crapus.ordinal()]);
-        locations[4][4].setActor(actors[ActorType.zorn.ordinal()]);
+        locations[0][0].setEnemy(actors[ActorType.skeleton.ordinal()]);
+        locations[0][3].setEnemy(actors[ActorType.werewolf.ordinal()]);
+        locations[1][2].setEnemy(actors[ActorType.gollum.ordinal()]);
+        locations[1][3].setEnemy(actors[ActorType.spider.ordinal()]);
+        locations[1][4].setEnemy(actors[ActorType.anaconda.ordinal()]);
+        locations[2][0].setEnemy(actors[ActorType.goblin.ordinal()]);
+        locations[2][2].setEnemy(actors[ActorType.vampire.ordinal()]);
+        locations[2][4].setEnemy(actors[ActorType.lizarus.ordinal()]);
+        locations[3][0].setEnemy(actors[ActorType.zombie.ordinal()]);
+        locations[3][2].setEnemy(actors[ActorType.ghoul.ordinal()]);
+        locations[3][3].setEnemy(actors[ActorType.ogre.ordinal()]);
+        locations[4][1].setEnemy(actors[ActorType.crapus.ordinal()]);
+        locations[4][4].setEnemy(actors[ActorType.zorn.ordinal()]);
 
         return 1;
     }

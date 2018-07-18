@@ -7,7 +7,7 @@ import Model.Player;
 import Model.Map;
 //import Model.TrapLocation;
 //=======
-import Model.Enemy;
+
 import Model.Actor;
 import Model.Question;
 import byui.cit260.againagain.view.StartProgramView;

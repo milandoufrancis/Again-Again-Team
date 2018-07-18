@@ -6,6 +6,8 @@
 package Control;
 
 import Exeptions.FightControlException;
+import Model.Actor;
+import java.util.Random;
 
 /**
  *
@@ -17,7 +19,7 @@ public class FightControl {
             throw new FightControlException("The health cannot be negative, or greater than hundred");
         }
         
-        if (Defense < 0 || Defense > 80){
+        if (Defense < 2 || Defense > 80){
             throw new FightControlException("The defense cannot be negagite, equal to zero and greater than 80");
         }
         
@@ -33,7 +35,42 @@ public class FightControl {
         return Attack;
     }
 
+    public static int attackEnemy(Actor attacker, Actor enemy, int strengh) throws FightControlException{
+        
+        if (attacker == null || enemy == null){
+            throw new FightControlException("invalid attacker or enemy");
+        }
+        
+        if (strengh < 0 ){
+            throw new FightControlException("Attack strengh cannot be negative");
+        }        
+        // get the health of the attacker
+        int attackerHealth = attacker.getActorHealth();
+        // get the health of the enemy
+        int enemyHealth = enemy.getActorHealth();
+        
+        int enemyDamage = FightControl.takeDamage(enemy.getActorHealth(), enemy.getDefence(), strengh);
+        // if the nenemy heealth - damage is less than 0 then 
+        if (enemyHealth - enemyDamage < 0){
+           return 1;
+        }
+         
+        
+        // enemyAttackStregth = random( enemies damage)
+        Random strenghGenerator = new Random();
+        int enemyAttackStrengh = strenghGenerator.nextInt(enemy.getActorDamage() + 1);
+        
+        // attackerDamage = takeDamage(enemyHealth, enemyDefense, enemyAttackStrenght)
+        int attackerDamage = FightControl.takeDamage(attacker.getActorHealth(), attacker.getDefence(), enemyAttackStrengh);
+        
+        // if the attacker health - the attscker danmage is less than 0 then 
+        if (attackerHealth - attackerDamage < 0){
+            return -1;
+        } 
+        
+        return 0;
 
+    }
     
     
     public static int trapControl(int Health, int Trap, int Level){

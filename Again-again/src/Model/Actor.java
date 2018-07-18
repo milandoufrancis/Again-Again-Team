@@ -13,6 +13,7 @@ public class Actor {
     private int actorScore;
     private int defence;
     
+    
     public Actor() {
         
     
