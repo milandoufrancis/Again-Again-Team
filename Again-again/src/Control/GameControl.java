@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Exeptions.GameControlException;
 import Exeptions.MapControlException;
 import Model.Actor;
 import Model.ActorType;
@@ -22,9 +23,9 @@ import java.awt.Point;
  */
 public class GameControl {
 
-    public static Player savePlayer(String playerName) {
+    public static Player savePlayer(String playerName)throws GameControlException {
         if (playerName == null || playerName.length() < 1) {
-            return null;
+         throw new GameControlException("The player name cannot be null");   
 
         }
 
@@ -202,7 +203,7 @@ public class GameControl {
     public static int createNewGame(Player player) throws MapControlException{
         // Check for invalid inputs
         if (player == null) {
-            return -1;
+            throw new MapControlException("The player cannot be null");
 // indicates invalid input
         }
 
@@ -219,7 +220,7 @@ public class GameControl {
         game.setActors(actorList);
         MapControl.createMap(game, 5, 5);
         if(game.getMap() == null){
-            return -1;
+            throw new MapControlException("The map cannot be null");
         }
         
 // Create the lists of used in the game

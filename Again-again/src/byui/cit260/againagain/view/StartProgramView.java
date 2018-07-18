@@ -6,6 +6,7 @@
 package byui.cit260.againagain.view;
 
 import Control.GameControl;
+import Exeptions.GameControlException;
 import java.util.Scanner;
 import Model.Player;
 /**
@@ -53,13 +54,20 @@ public class StartProgramView {
 
     private boolean doAction(String[] inputs) {
         
+        
         String playerName = inputs[0];
+        try {
+            
+        
         Player player = GameControl.savePlayer(playerName);
         if (player == null){
             System.out.println("Could not create the player." + "Enter a different name");
                     return false;
         }
-        
+        } catch(GameControlException ie){
+            System.out.println("Player name cannot be null");
+            return false;
+        }
         System.out.println("================================================= "
                 + "Welcome to the game " + playerName 
                 + " We hope you have a lot of fun!"
