@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Exeptions.UpgradeControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,7 +20,7 @@ public class UpgradeControlTest {
     }
     
     @Test
-    public void testUpgradeControl() {
+    public void testUpgradeControl() throws UpgradeControlException {
         System.out.println("Test 1");
         int CurrentHealth = 100;
         int PlayerLevel = 10;
