@@ -11,6 +11,7 @@ import Model.Game;
 import Model.Item;
 import Model.Location;
 import again.again.AgainAgain;
+import Model.Actor;
 
 /**
  *
@@ -65,10 +66,14 @@ class GameMenuView extends View {
                 for (Item item : items){
                     System.out.println(item.getItemName() + " " +  item.getItemType());
                 }
-                
+              
             case "Q":
                 System.out.println("Quit the game");
                 return true;
+                
+            case "A":
+                GameControl.CalcAverageDamage(AgainAgain.getGame().getActors());
+                break;
 
             default:
                 System.out.println("Invalid menu item.");
@@ -77,14 +82,49 @@ class GameMenuView extends View {
 
     }
 
-    
+    private void displayMap() {
+        //System.out.println("***displaymap stub function called***");
+        //game = get the currentGame from the main class
+        Game game = AgainAgain.getGame();
+//locations = get the 2-D locations array from the map
+        Location[][] locations = game.getMap().getLocations();
+//Print the title
+        System.out.print("\nAgain&Again Dark Dungeon\n");
+//Print the column numbers for each column
+        System.out.print("  1  |  2 | 3 |  4  | 5  \n");
+//for every row in map
+        for (int row = 0; row < locations.length; row++) {
+//Print a row divider
+        System.out.print("  -------------------------\n");
+//Print the row number on a new line
+            System.out.print(row + 1);
+//for every column in the row
+            for (int col = 0; col < locations[row].length; col++)
+            {
+                //Print a column divider
+                System.out.print("|");
+                Location location = locations[row][col]; 
+                        if (location.isVisited()){
+                            System.out.print(location.getDisplaySymbol());
+                        }else{
+                            System.out.print(" ?? ");
+                        }
+            }
+            System.out.print("|\n");
+        
+        }
+        System.out.print("---------------------------\n");
+    }
 
     private void viewItem() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    //Print an alphabetical list of actors that are currently programmed into the game.
     private void viewActors() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Here are the following actors within this game: \n");
+        System.out.print(this);
+        
     }
     
 }

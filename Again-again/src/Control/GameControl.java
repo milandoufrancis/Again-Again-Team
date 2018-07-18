@@ -186,7 +186,7 @@ public class GameControl {
 
         //Actor object for the monster, Zorn
         Actor zorn = new Actor();
-        zorn.setDescription("This creature stands before you, teeth bared and claws ready");
+        zorn.setDescription("Sounds oddly like this weird saxophonist you once listened to...");
         zorn.setCoordinates(new Point(2, 3));
         zorn.setActorHealth(25);
         zorn.setActorDamage(6);
@@ -269,6 +269,22 @@ public class GameControl {
             }
         }
         return items;
+    }
+     
+     public static double CalcAverageDamage(Actor[] actors) {
+        //Find the average of the actors damage output and print out a message 
+  
+        double total = 0;
+        for (Actor actor : actors) {
+            total += actor.getActorDamage();
+        }
+        double average = total / actors.length;
+        
+        System.out.println("The average of the actors' damage outputs are " 
+                + average 
+                + " points of damage.");
+        
+        return average;
     }
 }
 
