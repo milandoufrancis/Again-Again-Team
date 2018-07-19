@@ -26,7 +26,7 @@ public class MoveActorView extends View {
         MapControl.displayMap();
 
         //Print instructions to move an actor
-        System.out.println("w - moves the actor right\n"
+        this.console.println("w - moves the actor right\n"
                 + "A - moves the actor up\n"
                 + "S - moves the actor down\n"
                 + "D - moves the actor to the left\n"
@@ -89,12 +89,12 @@ public class MoveActorView extends View {
             newLocation = MapControl.moveActor(actor, row, column);
         } catch (MapControlException ex) {
             //Print error passed with the exception
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
             return false;
         }
         //Print the description of the scene in the
         //newLocation
-        System.out.println(newLocation.getDescription());
+        this.console.println(newLocation.getDescription());
         return false; //to loop the view 
     
 

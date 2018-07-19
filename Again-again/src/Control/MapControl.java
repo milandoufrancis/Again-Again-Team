@@ -154,7 +154,7 @@ public static Location moveActor(Actor actor, int newRow, int newColumn) throws 
  Location [][] locations = map.getLocations();
 // if (newRow < 1 || newRow > noOfRows in map OR
  //newColumn < 1 OR newColumn > noOfColumns in map) then
- if (newRow < 0 || newRow > map.getRowCount() || newColumn < 0 || newColumn > map.getColumnCount()){
+ if (newRow < 0 || newRow > map.getRowCount()-1 || newColumn < 0 || newColumn > map.getColumnCount()-1){
  throw new MapControlException("The input must be valid");
          }
  //currentRow = get the row from the actor

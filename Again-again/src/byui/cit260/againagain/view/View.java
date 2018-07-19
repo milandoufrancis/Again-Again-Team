@@ -37,7 +37,7 @@ public abstract class View implements ViewInterface {
     public String getInput(String promptMessage) {
         String input = null;
         boolean valid = false;
-        System.out.println(promptMessage); 
+        this.console.println(promptMessage); 
 try {
         while (!valid) {
             //System.out.println();

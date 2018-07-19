@@ -17,7 +17,7 @@ public class TrapMenuView extends View {
     public String[] getInputs() {
         String[] inputs = new String[1];
 
-        System.out.println("C - Check the damage caused by the trap.\n"
+        this.console.println("C - Check the damage caused by the trap.\n"
                 + "F - Flee");
         inputs[0] = getInput("Enter the menu option").trim().toUpperCase();
 
@@ -30,12 +30,12 @@ public class TrapMenuView extends View {
         health = FightControl.trapControl(80, 50, 10);
 
         if (health <= 0) {
-            System.out.println("You're dead!");
+            this.console.println("You're dead!");
             return true;
         } else if (health > 0 && health < 5) {
-            System.out.println("You're almost dead!");
+            this.console.println("You're almost dead!");
         } else {
-            System.out.println("You're still alive");
+            this.console.println("You're still alive");
         }
         System.out.println("Your health is " + health);
 
@@ -44,10 +44,10 @@ public class TrapMenuView extends View {
             case "F":
                 return true;
             case "C":
-                System.out.println("Your current health is : " + health);
+                this.console.println("Your current health is : " + health);
                 break;
             default:
-                System.out.println("Please enter a menu item");
+                this.console.println("Please enter a menu item");
         }
 
         return false;

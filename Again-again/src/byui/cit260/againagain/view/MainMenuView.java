@@ -61,7 +61,7 @@ class MainMenuView extends View{
     public String[] getInputs() {
         String[] inputs = new String[1];
 
-        System.out.println("N - Start New Game\n"
+        this.console.println("N - Start New Game\n"
                 + "L - Load game\n"
                 + "H - Help menu\n"
                 + "T - Trap menu\n"

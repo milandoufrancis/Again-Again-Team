@@ -65,11 +65,11 @@ class GameMenuView extends View {
             case "Y":
                 Item[] items = GameControl.doInsertionSort(Item.values());
                 for (Item item : items){
-                    System.out.println(item.getItemName() + " " +  item.getItemType());
+                    this.console.println(item.getItemName() + " " +  item.getItemType());
                 }
               
             case "Q":
-                System.out.println("Quit the game");
+                this.console.println("Quit the game");
                 return true;
                 
             case "D":
@@ -77,7 +77,7 @@ class GameMenuView extends View {
                 break;
 
             default:
-                System.out.println("Invalid menu item.");
+                this.console.println("Invalid menu item.");
         }
         return false;
 
@@ -90,20 +90,20 @@ class GameMenuView extends View {
 //locations = get the 2-D locations array from the map
         Location[][] locations = game.getMap().getLocations();
 //Print the title
-        System.out.print("\nAgain&Again Dark Dungeon\n");
+        this.console.print("\nAgain&Again Dark Dungeon\n");
 //Print the column numbers for each column
-        System.out.print("  1  |  2 | 3 |  4  | 5  \n");
+        this.console.print("  1  |  2 | 3 |  4  | 5  \n");
 //for every row in map
         for (int row = 0; row < locations.length; row++) {
 //Print a row divider
-        System.out.print("  -------------------------\n");
+        this.console.print("  -------------------------\n");
 //Print the row number on a new line
-            System.out.print(row + 1);
+            this.console.print(row + 1);
 //for every column in the row
             for (int col = 0; col < locations[row].length; col++)
             {
                 //Print a column divider
-                System.out.print("|");
+                this.console.print("|");
                 Location location = locations[row][col]; 
                         if (location.isVisited()){
                             System.out.print(location.getDisplaySymbol());
@@ -111,10 +111,10 @@ class GameMenuView extends View {
                             System.out.print(" ?? ");
                         }
             }
-            System.out.print("|\n");
+            this.console.print("|\n");
         
         }
-        System.out.print("---------------------------\n");
+        this.console.print("---------------------------\n");
     }
 
     private void viewItem() {
@@ -123,8 +123,8 @@ class GameMenuView extends View {
 
     //Print an alphabetical list of actors that are currently programmed into the game.
     private void viewActors() {
-        System.out.println("Here are the following actors within this game: \n");
-        System.out.print(this);
+        this.console.println("Here are the following actors within this game: \n");
+        this.console.print(this);
         
     }
     

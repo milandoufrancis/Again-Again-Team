@@ -32,26 +32,26 @@ public class BattleMenuView extends View {
         switch(menuItem) {
             
             case "A":
-                System.out.println("You attack the enemy!");
+                this.console.println("You attack the enemy!");
                 //Call the function that calculates damage here.
                 break;
             case "D":
-                System.out.println("You defend yourself for the next attack.");
+                this.console.println("You defend yourself for the next attack.");
                 break;
             case "R":
-                System.out.println("You ran away.");
+                this.console.println("You ran away.");
                 break;
             case "S":
-                System.out.println("You opened your pack to look for a...\n");
+                this.console.println("You opened your pack to look for a...\n");
                 //Call a method that opens a sub menu for the items the player
                 //has collected so far in the game.
                 break;
             case "I":
-                System.out.println("You use the item you have chosen.");
+                this.console.println("You use the item you have chosen.");
                 break;
 
             default:
-                System.out.println("Invalid menu item.");
+                this.console.println("Invalid menu item.");
         }
         return false;
     }

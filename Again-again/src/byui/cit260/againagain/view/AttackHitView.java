@@ -41,7 +41,7 @@ public class AttackHitView extends View {
             Actor enemy = location.getEnemy();
             
             if (enemy == null) {
-                System.out.println("There is no enemy in this location.");
+                this.console.println("There is no enemy in this location.");
                 return true;
             }
             
@@ -55,22 +55,22 @@ public class AttackHitView extends View {
                 
             }
             else if(result == -1){
-               System.out.println("You've been defeated by the enemy");
+               this.console.println("You've been defeated by the enemy");
                 return true; 
             }
             else {
-                System.out.println("No winner!!");
+                this.console.println("No winner!!");
                 return true; 
             }
                 
             
         } catch (FightControlException ie) {
-            System.out.println("Error reading input: " + ie.getMessage());
+            this.console.println("Error reading input: " + ie.getMessage());
             return false;
         }
      catch (NumberFormatException ie) {
     
-        System.out.println("Error reading input: " + ie.getMessage());
+        this.console.println("Error reading input: " + ie.getMessage());
             return false;
     }
 }
