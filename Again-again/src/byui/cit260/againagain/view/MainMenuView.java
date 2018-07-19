@@ -36,8 +36,8 @@ class MainMenuView extends View{
             case "H":
                 getHelp();
                 break;
-            case "R":
-                restartName();
+            case "L":
+                this.startSavedGame();
                 break;
             case "T":
                 TrapMenuView trap = new TrapMenuView();
@@ -62,7 +62,7 @@ class MainMenuView extends View{
         String[] inputs = new String[1];
 
         this.console.println("N - Start New Game\n"
-                + "L - Load game\n"
+                + "L - Start saved game\n"
                 + "H - Help menu\n"
                 + "T - Trap menu\n"
                 + "Q - Quit game\n");
@@ -92,5 +92,10 @@ class MainMenuView extends View{
     private void restartName() {
         StartExistingGameView gameView = new StartExistingGameView();
         StartExistingGameView.dispalyStartExistingGameView(AgainAgain.getPlayer());
+    }
+
+    private void startSavedGame() {
+        StartSavedGameView startSavedGameView = new StartSavedGameView();
+        startSavedGameView.display();
     }
 }

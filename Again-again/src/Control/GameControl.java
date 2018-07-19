@@ -15,7 +15,15 @@ import Model.Location;
 import Model.Player;
 import Model.Question;
 import again.again.AgainAgain;
+import byui.cit260.againagain.view.ErrorView;
 import java.awt.Point;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -287,5 +295,35 @@ public class GameControl {
         
         return average;
     }
-}
+     
+     public static void saveGame(Game currentGame, String filePath) throws GameControlException {
+         //System.out.println("SaveGame() in GameControl class");
+         if (currentGame == null || filePath == null){
+           throw new GameControlException();  
+         }
+         
+       try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))){
+       out.writeObject(currentGame);}
+       catch(IOException ex){
+      
+       }
+     }
+     
+     public static Game getGame(String filePath) throws GameControlException{
+       if (filePath == null){
+           throw new GameControlException();
+       }
+       Game currentGame;
+       
+       try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(filePath))){
+       currentGame = (Game) in.readObject();
+       AgainAgain.setGame(currentGame);
+       AgainAgain.setPlayer(currentGame.getPlayer());
+       
+       } catch (IOException | ClassNotFoundException ex) {
+           throw new GameControlException(ex.getMessage());
+        }
+       return currentGame;
+     }
 
+}

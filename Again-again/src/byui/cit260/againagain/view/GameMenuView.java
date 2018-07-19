@@ -30,8 +30,9 @@ class GameMenuView extends View {
                 + "I - this helps to view the list of items\n"
                 + "J - to view a list of actors\n"
                 + "X - to trick the actor fight\n"
-               + "S - moves the actor\n"
+               + "M - moves the actor\n"
                + "D - Calculates the average damage of the actors in this game.\n"
+               + "S - Save the game\n"
           
                 + "Q - Quit game\n");
         return inputs;
@@ -46,7 +47,7 @@ class GameMenuView extends View {
             case "V":// to view location
                 MapControl.displayMap();
                 break;
-            case "S": // to move the actor
+            case "M": // to move the actor
                 MoveActorView actorMove = new MoveActorView();
                 actorMove.display();
                 break;
@@ -74,6 +75,9 @@ class GameMenuView extends View {
                 
             case "D":
                 GameControl.CalcAverageDamage(AgainAgain.getGame().getActors());
+                break;
+            case "S":
+                this.saveGame();
                 break;
 
             default:
@@ -126,6 +130,11 @@ class GameMenuView extends View {
         this.console.println("Here are the following actors within this game: \n");
         this.console.print(this);
         
+    }
+
+    private void saveGame() {
+        SaveGameView saveGameView = new SaveGameView();
+        saveGameView.display();
     }
     
 }
