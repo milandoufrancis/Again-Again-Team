@@ -28,7 +28,7 @@ class MainMenuView extends View{
                 try {
                     startNewgame();
                     }catch (MapControlException ie){
-            System.out.println(ie.getMessage());
+            System.out.println("Error reading input: " + ie.getMessage());
             return false;
         }
                 

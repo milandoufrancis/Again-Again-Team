@@ -5,6 +5,9 @@
  */
 package byui.cit260.againagain.view;
 
+import again.again.AgainAgain;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -12,6 +15,9 @@ import java.util.Scanner;
  * @author My Laptop
  */
 public abstract class View implements ViewInterface {
+    private String message;
+    protected final BufferedReader Keyboard = AgainAgain.getInFile();
+    protected final PrintWriter console = AgainAgain.getOutFile();
 
     public View() {
     }
@@ -29,23 +35,37 @@ public abstract class View implements ViewInterface {
     }
 
     public String getInput(String promptMessage) {
-        String input = "";
+        String input = null;
         boolean valid = false;
         System.out.println(promptMessage); 
-
+try {
         while (!valid) {
-            System.out.println();
-            Scanner inFile = new Scanner(System.in);
-            input = inFile.nextLine();
-            input = input.trim().toUpperCase();
-
+            //System.out.println();
+            //Scanner inFile = new Scanner(System.in);
+            input = this.Keyboard.readLine();
+            input = input.trim();
+            
             if (input.length() < 1) {
-                System.out.println("You must enter a value.");
-                continue;
+               System.out.println("You must enter a value.");
+                continue; 
             }
-            valid = true;
-
+            break;
         }
-    return input;
+} catch (Exception e) {
+    System.out.println("Error reading input: " + e.getMessage());
+}
+return input;
     }
+            //input = inFile.nextLine();
+            //input = input.trim().toUpperCase();
+
+            //if (input.length() < 1) {
+                //System.out.println("You must enter a value.");
+                //continue;
+           // }
+            //valid = true;
+
+       // }
+    //return input;
+    //}
 }

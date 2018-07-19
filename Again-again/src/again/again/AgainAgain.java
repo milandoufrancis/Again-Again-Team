@@ -29,6 +29,17 @@ public class AgainAgain {
     private static Actor actor;
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
+    public static PrintWriter logFile = null;
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        AgainAgain.logFile = logFile;
+    }
+    
+    
 
     public static PrintWriter getOutFile() {
         return outFile;
@@ -86,6 +97,7 @@ public class AgainAgain {
         {
            AgainAgain.inFile = new BufferedReader(new InputStreamReader(System.in)); 
            AgainAgain.outFile = new PrintWriter(System.out, true);
+           logFile = new PrintWriter("logFile.txt");
             StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
         }catch (Throwable e){
@@ -101,8 +113,11 @@ public class AgainAgain {
                     AgainAgain.inFile.close();
                 if (AgainAgain.outFile != null)
                     AgainAgain.outFile.close();
-            } catch (IOException ex) {
-                System.out.println("Error closing files");
+                if (logFile != null){
+                    logFile.close();
+                }
+            } catch (IOException ioe2) {
+                System.console().printf("%s%s", "Error closing the input/out");
                 return;
             }
             
