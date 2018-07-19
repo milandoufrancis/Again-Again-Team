@@ -89,7 +89,7 @@ public class MoveActorView extends View {
             newLocation = MapControl.moveActor(actor, row, column);
         } catch (MapControlException ex) {
             //Print error passed with the exception
-            System.out.println(ex.getMessage());
+            System.out.println("Error reading input: " + ex.getMessage());
             return false;
         }
         //Print the description of the scene in the

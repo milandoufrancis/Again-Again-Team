@@ -6,31 +6,22 @@
 package byui.cit260.againagain.view;
 
 import Control.GameControl;
+import Exeptions.GameControlException;
 import java.util.Scanner;
 import Model.Player;
 /**
  *
  * @author Levi and Hidnel
  */
-public class StartProgramView {
+public class StartProgramView extends View{
 
     public StartProgramView() {
         
     }
     
-    public void display() {
-        boolean endOfView = false;
-        do {
-            String[] inputs = getInputs();
-            if(inputs[0].length() < 1 || inputs[0].equals("Q")) {
-                return;
-            }
-            endOfView = doAction(inputs);
-        }
-        while (endOfView != true);
-    }
+    
 
-    private String[] getInputs() {
+    public String[] getInputs() {
          System.out.println("**** getInputs() called ***");
          
          String[] inputs = new String[1];
@@ -51,15 +42,22 @@ public class StartProgramView {
          }     
     
 
-    private boolean doAction(String[] inputs) {
+    public boolean doAction(String[] inputs) {
+        
         
         String playerName = inputs[0];
+        try {
+            
+        
         Player player = GameControl.savePlayer(playerName);
         if (player == null){
             System.out.println("Could not create the player." + "Enter a different name");
                     return false;
         }
-        
+        } catch(GameControlException ie){
+            System.out.println("Error reading input: " + ie.getMessage());
+            return false;
+        }
         System.out.println("================================================= "
                 + "Welcome to the game " + playerName 
                 + " We hope you have a lot of fun!"

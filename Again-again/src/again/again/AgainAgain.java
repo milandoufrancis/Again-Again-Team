@@ -1,15 +1,23 @@
 package again.again;
 
+import Model.Actor;
 import Model.Game;
 import Model.Item;
 import Model.Player;
 import Model.Map;
-import Model.TrapLocation;
-import Model.Actor;
-import Model.Question;
-import byui.cit260.againagain.view.StartProgramView;
-import Model.Stats;
 
+
+
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+//
+//
 
 /**
  * @author My Laptop
@@ -18,6 +26,36 @@ public class AgainAgain {
     private static Player player;
     private static Game game;
     private static Actor actor;
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    public static PrintWriter logFile = null;
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        AgainAgain.logFile = logFile;
+    }
+    
+    
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        AgainAgain.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        AgainAgain.inFile = inFile;
+    }
+    
     
     
 
@@ -54,12 +92,36 @@ public class AgainAgain {
 //     * @param args the command line arguments
 //     */
     public static void main(String[] args) {
-        try {StartProgramView startProgramView = new StartProgramView();
+        try 
+        {
+           AgainAgain.inFile = new BufferedReader(new InputStreamReader(System.in)); 
+           AgainAgain.outFile = new PrintWriter(System.out, true);
+           logFile = new PrintWriter("logFile.txt");
+            StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
-        }catch (Throwable ie){
-            System.out.println("Shut down the game");
+        }catch (Throwable e){
+            System.out.println("Exception: " + e.toString() +
+                     "\nCause: " + e.getCause() + 
+                    "\nMessage: " + e.getMessage());
+            e.printStackTrace();;
            
         }
+        finally {
+            try {
+                if (AgainAgain.inFile != null)
+                    AgainAgain.inFile.close();
+                if (AgainAgain.outFile != null)
+                    AgainAgain.outFile.close();
+                if (logFile != null){
+                    logFile.close();
+                }
+            } catch (IOException ioe2) {
+                System.console().printf("%s%s", "Error closing the input/out");
+                return;
+            }
+            
+        }
+    }
         
 //        Player player = new Player();
 //        player.setCurrentFile("yes");
@@ -87,8 +149,7 @@ public class AgainAgain {
 //      System.out.println(actor.toString());
 //      System.out.println(enemy.toString());
 //      System.out.println(questions.toString());
-////>>>>>>> origin/master
       
     }
     
-}
+

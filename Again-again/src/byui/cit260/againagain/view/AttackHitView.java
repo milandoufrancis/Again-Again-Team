@@ -65,12 +65,12 @@ public class AttackHitView extends View {
                 
             
         } catch (FightControlException ie) {
-            System.out.println(ie.getMessage());
+            System.out.println("Error reading input: " + ie.getMessage());
             return false;
         }
      catch (NumberFormatException ie) {
     
-        System.out.println("Please enter a number");
+        System.out.println("Error reading input: " + ie.getMessage());
             return false;
     }
 }
