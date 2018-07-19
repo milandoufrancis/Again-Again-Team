@@ -3,16 +3,13 @@ package again.again;
 import Model.Game;
 import Model.Item;
 import Model.Player;
-//<<<<<<< HEAD
 import Model.Map;
-//import Model.TrapLocation;
-//=======
-
+import Model.TrapLocation;
 import Model.Actor;
 import Model.Question;
 import byui.cit260.againagain.view.StartProgramView;
 import Model.Stats;
-//>>>>>>> origin/master
+
 
 /**
  * @author My Laptop

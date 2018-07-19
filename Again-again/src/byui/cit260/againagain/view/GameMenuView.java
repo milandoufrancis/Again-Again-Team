@@ -30,7 +30,8 @@ class GameMenuView extends View {
                 + "I - this helps to view the list of items\n"
                 + "J - to view a list of actors\n"
                 + "X - to trick the actor fight\n"
-               + "S - moves the actor\n" 
+               + "S - moves the actor\n"
+               + "D - Calculates the average damage of the actors in this game.\n"
           
                 + "Q - Quit game\n");
         return inputs;
@@ -53,7 +54,7 @@ class GameMenuView extends View {
                 AttackHitView actorFight = new AttackHitView();
                 actorFight.display();
                 break;
-
+  
             case "I":// list of items
                 this.viewItem();
                 break;
@@ -71,7 +72,7 @@ class GameMenuView extends View {
                 System.out.println("Quit the game");
                 return true;
                 
-            case "A":
+            case "D":
                 GameControl.CalcAverageDamage(AgainAgain.getGame().getActors());
                 break;
 
