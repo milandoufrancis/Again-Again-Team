@@ -43,6 +43,10 @@ class MainMenuView extends View{
                 TrapMenuView trap = new TrapMenuView();
                 trap.display();
                 break;
+            case "P":
+                PrintReportView report = new PrintReportView();
+                report.display();
+                break;
             case "F": 
                 AttackHitView view = new AttackHitView();
                 view.display();
@@ -65,6 +69,7 @@ class MainMenuView extends View{
                 + "L - Start saved game\n"
                 + "H - Help menu\n"
                 + "T - Trap menu\n"
+                + "P - Print report/n"
                 + "Q - Quit game\n");
         
         inputs[0] = getInput("Enter the menu option").trim().toUpperCase();
