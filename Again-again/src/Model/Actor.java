@@ -6,17 +6,34 @@ import java.util.Objects;
 import java.awt.Point;
 
 public class Actor {
+
     private String description;
     private Point coordinates; 
     private int actorHealth;
     private int actorDamage;
     private int actorScore;
     private int defence;
-    private int actorName;
+    private String actorName;
     
+    public enum ActorType {
+    mainplayer,
+    werewolf,
+    skeleton,
+    spider,
+    zombie,
+    vampire,
+    ghoul,
+    anaconda,
+    ogre,
+    nemesis,
+    gollum,
+    lizarus,
+    crapus,
+    goblin,
+    zorn;
+    }
     
     public Actor() {
-        
     
     }
 
@@ -63,15 +80,24 @@ public class Actor {
         this.actorScore = actorScore;
     }
 
+    public String getActorName() {
+        return actorName;
+    }
+
+    public void setActorName(String actorName) {
+        this.actorName = actorName;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.description);
-        hash = 59 * hash + Objects.hashCode(this.coordinates);
-        hash = 59 * hash + this.actorHealth;
-        hash = 59 * hash + this.actorDamage;
-        hash = 59 * hash + this.actorScore;
-        hash = 59 * hash + this.defence;
+        int hash = 3;
+        hash = 79 * hash + Objects.hashCode(this.description);
+        hash = 79 * hash + Objects.hashCode(this.coordinates);
+        hash = 79 * hash + this.actorHealth;
+        hash = 79 * hash + this.actorDamage;
+        hash = 79 * hash + this.actorScore;
+        hash = 79 * hash + this.defence;
+        hash = 79 * hash + Objects.hashCode(this.actorName);
         return hash;
     }
 
@@ -110,8 +136,9 @@ public class Actor {
 
     @Override
     public String toString() {
-        return "Actor{" + "description=" + description + ", coordinates=" + coordinates + ", actorHealth=" + actorHealth + ", actorDamage=" + actorDamage + ", actorScore=" + actorScore + ", defence=" + defence + '}';
+        return "Actor{" + "description=" + description + ", coordinates=" + coordinates + ", actorHealth=" + actorHealth + ", actorDamage=" + actorDamage + ", actorScore=" + actorScore + ", defence=" + defence + ", actorName=" + actorName + '}';
     }
+    
 
     
 }

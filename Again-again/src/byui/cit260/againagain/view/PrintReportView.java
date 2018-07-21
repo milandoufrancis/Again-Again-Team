@@ -7,6 +7,8 @@ package byui.cit260.againagain.view;
 
 import Control.GameControl;
 import Exeptions.GameControlException;
+import Model.Actor;
+import Model.ActorType;
 import Model.Game;
 import Model.Item;
 import again.again.AgainAgain;
@@ -84,7 +86,24 @@ public class PrintReportView extends View{
        }
        return;    
     }
-                    }
+    
+    private void printActorList(String filePath) throws GameControlException {
+        try (PrintWriter print = new PrintWriter(filePath)){
+            print.println("Meet the Cast");
+            String format = "%-15s %-10s %-50s %n";
+            print.printf(format, "Name", "Description");
+            print.print("------------------------------------------------------------------------------------------");
+            print.println();
+            ActorType[] actors = ActorType.values();
+            for (ActorType actor: actors){
+                print.printf(format, actor.getActorName(), actor.getActorDescription());
+            }
+        }catch(IOException ex){
+         throw new GameControlException(ex.getMessage());
+       }
+        return;
+    }
+                }
 
     
 

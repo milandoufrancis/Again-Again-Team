@@ -67,6 +67,7 @@ class GameMenuView extends View {
                 Item[] items = GameControl.doInsertionSort(Item.values());
                 for (Item item : items){
                     this.console.println(item.getItemName() + " " +  item.getItemType());
+                    break;
                 }
               
             case "Q":
@@ -122,7 +123,7 @@ class GameMenuView extends View {
     }
 
     private void viewItem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     
     }
 
     //Print an alphabetical list of actors that are currently programmed into the game.
